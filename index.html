@@ -4,34 +4,56 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A simple example</title>
+    <title>Example</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css" />
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
     <style>
-        body {
-            background-color: black;
+        * {
+            margin: 0;
+            padding: 0;
         }
         
         #panorama {
-            width: 98.2vw;
-            height: 97.6vh;
+            width: 100%;
+            height: 86.5vh;
+            box-sizing: border-box;
+        }
+        
+        .gav {
+            font-size: 60px;
+            height: 10%;
+            width: 100%;
+            /* position: absolute;
+            bottom: 0;
+            left: 0; */
+            background-color: aqua;
+            opacity: 0.3;
         }
     </style>
 </head>
 
 <body>
 
-    <div id="panorama"></div>
+    <!-- <iframe allowfullscreen style="border-style:none;" src="./src/standalone/pannellum.htm?config=../../index.json"> -->
+    <!-- </iframe> -->
+    <!-- <div class="gav">gav</div> -->
+    <div id="panorama">
+        <div class="gav">gav</div>
+        <canvas class=""></canvas>
+    </div>
+
+
     <script>
-        let viewer = pannellum.viewer('panorama', {
-            "type": "equirectangular",
-            "panorama": "./assets/img1.jpg",
-            "autoLoad": true,
-            "autoRotate": 0.5,
-            "autoRotateInactivityDelay": 5000,
-            "keyboardZoom": true,
-        });
-        // viewer.
+        var request = new XMLHttpRequest();
+        request.open("GET", "./index.json", false);
+        request.send(null)
+        var data = JSON.parse(request.responseText);
+        console.log(data)
+        let listener = pannellum.viewer('panorama', data);
+
+        console.log(listener)
+
+        //cssClass
     </script>
 
 </body>

@@ -1,0 +1,54 @@
+{
+    "default": {
+        "author": "easycg",
+        "firstScene": "first",
+        "sceneFadeDuration": 2000,
+        "autoLoad": true,
+        "autoRotate": 0.5,
+        "autoRotateInactivityDelay": 5000,
+        "yaw": 180,
+        "previewTitle": "Первый зал"
+    },
+
+    "scenes": {
+        "first": {
+            "title": "Первый зал",
+            "type": "equirectangular",
+            "panorama": "./assets/img1.jpg",
+            "hotSpots": [{
+                    "pitch": -12,
+                    "yaw": 170,
+                    "type": "info",
+                    "text": "This is Jordan Pond, located in Acadia National Park."
+                },
+                {
+                    "pitch": -10,
+                    "yaw": -50,
+                    "type": "info",
+                    "text": "This is a link.",
+                    "URL": "https://github.com/mpetroff/pannellum"
+                },
+                {
+                    "pitch": -35,
+                    "yaw": 277,
+                    "type": "scene",
+                    "text": "Второй зал",
+                    "sceneId": "second"
+                }
+            ]
+        },
+
+        "second": {
+            "title": "Второй зал",
+            "type": "equirectangular",
+            "panorama": "./assets/img2.jpg",
+            "hotSpots": [{
+                "pitch": -25,
+                "yaw": 75,
+                "type": "scene",
+                "text": "Первый зал",
+                "sceneId": "first"
+            }]
+        }
+    }
+}
