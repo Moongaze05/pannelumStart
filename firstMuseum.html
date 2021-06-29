@@ -26,7 +26,16 @@
             text-align: center;
             width: 100%;
             padding-bottom: 3px;
+            /* overflow: hidden;
+            opacity: 0;
+            max-height: 0;
+            transition: max-height 0s 500ms, opacity 300ms ease-in-out; */
         }
+        /* #controls .visible {
+            max-height: auto;
+            opacity: 1;
+            transition: max-height 0s, opacity 300ms ease-in-out;
+        } */
         
         .ctrl {
             padding: 8px 5px;
@@ -62,13 +71,44 @@
         .ctrl-mobile {
             display: inline-block;
         }
-        
-        .transition-button {
+        /* .transition-button {
             transform: translateX(50%);
             translate: all 2s ease-in-out;
+        } */
+        
+        .map {
+            position: absolute;
+            background-color: rgb(51, 45, 45);
+            top: 0;
+            left: 70%;
+            width: 350px;
+            height: 400px;
+            z-index: 2;
+            opacity: 0.6;
+            background-image: url('/assets/test.png');
         }
         
-        @media (max-width:575px) {
+        #first-scene {
+            position: absolute;
+            top: 260px;
+            left: 90px;
+        }
+        
+        #second-scene {
+            position: absolute;
+            top: 260px;
+            left: 200px;
+        }
+        
+        .point:hover {
+            fill: rgb(145, 135, 135);
+        }
+        
+        .point:active {
+            fill: rgb(102, 95, 95)
+        }
+        
+        @media (max-width: 575px) {
             #panorama {
                 height: 86.2vh;
             }
@@ -87,6 +127,8 @@
                 display: none;
             }
             .ctrl-toggle-on {
+                animation: hide 1s linear;
+                animation-fill-mode: forwards;
                 display: inline-block;
             }
         }
@@ -97,18 +139,40 @@
 
     <div id="panorama">
         <div id="controls">
-            <div class="ctrl ctrl-nav ctrl-mobile" id="pan-up">&#9650;</div>
-            <div class="ctrl ctrl-nav ctrl-mobile" id="pan-down">&#9660;</div>
-            <div class="ctrl ctrl-nav ctrl-mobile" id="pan-left">&#9664;</div>
-            <div class="ctrl ctrl-nav ctrl-mobile" id="pan-right">&#9654;</div>
-            <div class="ctrl ctrl-nav ctrl-mobile" id="zoom-in">&plus;</div>
-            <div class="ctrl ctrl-nav ctrl-mobile" id="zoom-out">&minus;</div>
-            <div class="ctrl ctrl-nav ctrl-mobile" id="fullscreen">&#x2922;</div>
-            <div class="ctrl toggle-bar" id="toggle-bar" onclick="toggleBar()">&#9776;</div>
+            <div class="visible">
+                <div class="ctrl ctrl-nav ctrl-mobile" id="pan-up">&#9650;</div>
+                <div class="ctrl ctrl-nav ctrl-mobile" id="pan-down">&#9660;</div>
+                <div class="ctrl ctrl-nav ctrl-mobile" id="pan-left">&#9664;</div>
+                <div class="ctrl ctrl-nav ctrl-mobile" id="pan-right">&#9654;</div>
+                <div class="ctrl ctrl-nav ctrl-mobile" id="zoom-in">&plus;</div>
+                <div class="ctrl ctrl-nav ctrl-mobile" id="zoom-out">&minus;</div>
+                <div class="ctrl ctrl-nav ctrl-mobile" id="fullscreen">&#x2922;</div>
+                <div class="ctrl toggle-bar" id="toggle-bar" onclick="toggleBar()">&#9776;</div>
+            </div>
         </div>
 
         <div class="map">
-
+            <div class="point" id="first-scene"><svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="20px" height="25px" viewBox="0 0 97.713 97.713" style="enable-background:new 0 0 97.713 97.713;" xml:space="preserve">
+           <g>
+               <path d="M48.855,0C29.021,0,12.883,16.138,12.883,35.974c0,5.174,1.059,10.114,3.146,14.684
+                   c8.994,19.681,26.238,40.46,31.31,46.359c0.38,0.441,0.934,0.695,1.517,0.695s1.137-0.254,1.517-0.695
+                   c5.07-5.898,22.314-26.676,31.311-46.359c2.088-4.57,3.146-9.51,3.146-14.684C84.828,16.138,68.69,0,48.855,0z M48.855,54.659
+                   c-10.303,0-18.686-8.383-18.686-18.686c0-10.304,8.383-18.687,18.686-18.687s18.686,8.383,18.686,18.687
+                   C67.542,46.276,59.159,54.659,48.855,54.659z"/>
+           </g>
+        </svg>
+            </div>
+            <div class="point" id="second-scene"><svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="20px" height="25px" viewBox="0 0 97.713 97.713" style="enable-background:new 0 0 97.713 97.713;" xml:space="preserve">
+                <g>
+                    <path d="M48.855,0C29.021,0,12.883,16.138,12.883,35.974c0,5.174,1.059,10.114,3.146,14.684
+                        c8.994,19.681,26.238,40.46,31.31,46.359c0.38,0.441,0.934,0.695,1.517,0.695s1.137-0.254,1.517-0.695
+                        c5.07-5.898,22.314-26.676,31.311-46.359c2.088-4.57,3.146-9.51,3.146-14.684C84.828,16.138,68.69,0,48.855,0z M48.855,54.659
+                        c-10.303,0-18.686-8.383-18.686-18.686c0-10.304,8.383-18.687,18.686-18.687s18.686,8.383,18.686,18.687
+                        C67.542,46.276,59.159,54.659,48.855,54.659z"/>
+                </g>
+             </svg>
+            </div>
+            <!-- <input type="radio" name="" id="second-scene"> -->
         </div>
     </div>
 
@@ -119,6 +183,18 @@
         var data = JSON.parse(request.responseText);
 
         let viewer = pannellum.viewer('panorama', data);
+        let points = document.querySelectorAll('.point');
+
+        points.forEach(point => {
+            point.addEventListener('click', (event) => {
+                let target = event.target;
+                fillRed(target);
+            });
+        });
+
+        function fillRed(target) {
+            target.style.fill = 'red';
+        }
 
         function toggleBar() {
             let buttons = document.querySelectorAll('.ctrl-nav')
@@ -131,8 +207,6 @@
             buttonToggle.classList.toggle('toggle-bar-add');
             buttonToggle.classList.toggle('transition-button');
         }
-
-
 
         function keysUp() {
             document.getElementById('pan-up').addEventListener('click', function(e) {
