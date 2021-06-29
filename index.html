@@ -1,91 +1,45 @@
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Example</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css" />
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
-    <script>
-        function draw() {
-            let canvas = document.getElementById('meny');
-            if (canvas.getContext) {
-                let ctx = canvas.getContext('2d');
-
-                ctx.fillStyle = 'rgb(200, 0, 0)';
-                ctx.fillRect(10, 10, 50, 50);
-
-                ctx.fillStyle = 'rgba(0, 0, 200, 0.5)';
-                ctx.fillRect(30, 30, 50, 50);
-            }
-        }
-
-        function getSizePage() {
-            let windowHeight = window.screen.height;
-            let windowWidth = window.screen.width;
-            document.getElementById('meny').style.height = windowHeight;
-            document.getElementById('meny').style.width = windowWidth;
-        }
-    </script>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-        }
-        
-        #panorama {
-            width: 100%;
-            height: 86.5vh;
-            box-sizing: border-box;
-        }
-        
-        .gav {
-            font-size: 60px;
-            height: 10%;
-            width: 100%;
-            /* position: absolute;
-            bottom: 0;
-            left: 0; */
-            background-color: aqua;
-            opacity: 0.3;
-        }
-        
-        .meny {
-            width: 100%;
-            height: 10%;
-        }
-        
-        .canv {
-            z-index: 4000;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <title>Музей</title>
 </head>
 
-<body onload="draw()">
+<body>
+    <header class="header">
+        <h1>Музеи и выставки Екатеринбурга</h1>
+    </header>
 
-    <!-- <iframe allowfullscreen style="border-style:none;" src="./src/standalone/pannellum.htm?config=../../index.json"> -->
-    <!-- </iframe> -->
-    <!-- <div class="gav">gav</div> -->
-    <div id="panorama" onload="getSizePage()">
-        <div class="gav">gav</div>
-        <canvas id="meny" width="" height=""></canvas>
-    </div>
+    <main class="main">
+        <section class="container">
+            <h2 class="choosing">Выберите интересующий вас музей:</h2>
+            <div class="museums">
+                <div class="museum">
+                    <a href="./firstMuseum.html">
+                        <h3>Первый музей</h3>
 
-    <script>
-        var request = new XMLHttpRequest();
-        request.open("GET", "./index.json", false);
-        request.send(null)
-        var data = JSON.parse(request.responseText);
-        console.log(data)
-        let listener = pannellum.viewer('panorama', data);
-
-        console.log(listener)
-
-
-        //cssClass
-    </script>
-
+                        <img src="./assets/museum1.jpg" alt="first museum" height="400" width="550">
+                    </a>
+                </div>
+                <div class="museum">
+                    <a href="./firstMuseum.html">
+                        <h3>Второй музей</h3>
+                        <img src="./assets/museum2.jpg" alt="second museum" height="400" width="550">
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <h4>&copy; All rights reserved. Project by EasyCG</h4>
+    </footer>
 </body>
 
 </html>

@@ -7,7 +7,8 @@
         "autoRotate": 0.5,
         "autoRotateInactivityDelay": 5000,
         "yaw": 180,
-        "previewTitle": "Первый зал"
+        "previewTitle": "Первый зал",
+        "showControls": false
     },
 
     "scenes": {
@@ -15,6 +16,7 @@
             "title": "Первый зал",
             "type": "equirectangular",
             "panorama": "./assets/img1.jpg",
+            "preview": "./assets/img1.jpg",
             "hotSpots": [{
                     "pitch": -12,
                     "yaw": 170,
@@ -42,6 +44,7 @@
             "title": "Второй зал",
             "type": "equirectangular",
             "panorama": "./assets/img2.jpg",
+            "preview": "./assets/img2.jpg",
             "hotSpots": [{
                 "pitch": -25,
                 "yaw": 75,
