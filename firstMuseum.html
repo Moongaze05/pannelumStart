@@ -6,144 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Example</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css" />
+    <link rel="stylesheet" href="museumStyle.css">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-        }
-        
-        #panorama {
-            width: 100%;
-            height: 100vh;
-            box-sizing: border-box;
-        }
-        
-        #controls {
-            position: absolute;
-            bottom: 0;
-            z-index: 2;
-            text-align: center;
-            width: 100%;
-            padding-bottom: 3px;
-            /* overflow: hidden;
-            opacity: 0;
-            max-height: 0;
-            transition: max-height 0s 500ms, opacity 300ms ease-in-out; */
-        }
-        /* #controls .visible {
-            max-height: auto;
-            opacity: 1;
-            transition: max-height 0s, opacity 300ms ease-in-out;
-        } */
-        
-        .ctrl {
-            padding: 8px 5px;
-            width: 30px;
-            text-align: center;
-            background: rgba(200, 200, 200, 0.8);
-            display: inline-block;
-            cursor: pointer;
-        }
-        
-        .ctrl:hover {
-            background: rgba(200, 200, 200, 1);
-        }
-        
-        .ctrl-toggle {
-            display: inline-block;
-        }
-        
-        .ctrl-toggle-off {
-            display: none;
-        }
-        
-        .toggle-bar {
-            display: inline-block;
-            /* transform: translateX(10px);
-            transition: all 2s ease-in-out; */
-        }
-        
-        .ctrl-toggle-button {
-            display: inline-block;
-        }
-        
-        .ctrl-mobile {
-            display: inline-block;
-        }
-        /* .transition-button {
-            transform: translateX(50%);
-            translate: all 2s ease-in-out;
-        } */
-        
-        .map {
-            position: absolute;
-            background-color: rgb(51, 45, 45);
-            top: 0;
-            left: 70%;
-            width: 350px;
-            height: 400px;
-            z-index: 2;
-            opacity: 0.6;
-            background-image: url('/assets/test.png');
-        }
-        
-        #first-scene {
-            position: absolute;
-            top: 260px;
-            left: 90px;
-        }
-        
-        #second-scene {
-            position: absolute;
-            top: 260px;
-            left: 200px;
-        }
-        
-        .point:hover {
-            fill: rgb(145, 135, 135);
-        }
-        
-        .point:active {
-            fill: rgb(102, 95, 95)
-        }
-        
-        @media (max-width:1000px) {
-            .map {
-                left: 60%
-            }
-        }
-        
-        @media (max-width: 575px) {
-            #panorama {
-                height: 86.2vh;
-            }
-            .ctrl-toggle {
-                display: inline-block;
-            }
-            .toggle-bar {
-                position: absolute;
-                left: 0;
-                top: -15.2vh;
-            }
-            .toggle-bar-add {
-                top: -8.5vh;
-            }
-            .ctrl-mobile {
-                display: none;
-            }
-            .ctrl-toggle-on {
-                animation: hide 1s linear;
-                animation-fill-mode: forwards;
-                display: inline-block;
-            }
-            .map {
-                width: 150px;
-                height: 200px;
-                left: 58%;
-            }
-        }
-    </style>
 </head>
 
 <body>
@@ -163,7 +27,7 @@
         </div>
 
         <div class="map">
-            <div class="point" id="first-scene"><svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="20px" height="25px" viewBox="0 0 97.713 97.713" style="enable-background:new 0 0 97.713 97.713;" xml:space="preserve">
+            <!-- <div class="point" id="first-scene"><svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="20px" height="25px" viewBox="0 0 97.713 97.713" style="enable-background:new 0 0 97.713 97.713;" xml:space="preserve">
            <g>
                <path d="M48.855,0C29.021,0,12.883,16.138,12.883,35.974c0,5.174,1.059,10.114,3.146,14.684
                    c8.994,19.681,26.238,40.46,31.31,46.359c0.38,0.441,0.934,0.695,1.517,0.695s1.137-0.254,1.517-0.695
@@ -172,8 +36,8 @@
                    C67.542,46.276,59.159,54.659,48.855,54.659z"/>
            </g>
         </svg>
-            </div>
-            <div class="point" id="second-scene"><svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="20px" height="25px" viewBox="0 0 97.713 97.713" style="enable-background:new 0 0 97.713 97.713;" xml:space="preserve">
+            </div> -->
+            <!-- <div class="point" id="second-scene"><svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="20px" height="25px" viewBox="0 0 97.713 97.713" style="enable-background:new 0 0 97.713 97.713;" xml:space="preserve">
                 <g>
                     <path d="M48.855,0C29.021,0,12.883,16.138,12.883,35.974c0,5.174,1.059,10.114,3.146,14.684
                         c8.994,19.681,26.238,40.46,31.31,46.359c0.38,0.441,0.934,0.695,1.517,0.695s1.137-0.254,1.517-0.695
@@ -182,8 +46,15 @@
                         C67.542,46.276,59.159,54.659,48.855,54.659z"/>
                 </g>
              </svg>
+            </div> -->
+            <div class="point" id="first-scene">
+                <input type="radio" name="radio" id="first-radio">
+                <label for="first-radio"></label>
             </div>
-            <!-- <input type="radio" name="" id="second-scene"> -->
+            <div class="point" id="second-scene">
+                <input type="radio" name="radio" id="second-radio">
+                <label for="second-radio"></label>
+            </div>
         </div>
     </div>
 
@@ -198,13 +69,13 @@
 
         points.forEach(point => {
             point.addEventListener('click', (event) => {
-                let target = event.target;
+                let target = event.currentTarget;
                 fillRed(target);
             });
         });
 
         function fillRed(target) {
-            target.style.fill = 'red';
+            target.classList.toggle('add-red');
         }
 
         function toggleBar() {

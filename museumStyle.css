@@ -1,0 +1,197 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#panorama {
+    width: 100%;
+    height: 100vh;
+    box-sizing: border-box;
+}
+
+#controls {
+    position: absolute;
+    bottom: 0;
+    z-index: 2;
+    text-align: center;
+    width: 100%;
+    padding-bottom: 3px;
+    /* overflow: hidden;
+    opacity: 0;
+    max-height: 0;
+    transition: max-height 0s 500ms, opacity 300ms ease-in-out; */
+}
+
+
+/* #controls .visible {
+    max-height: auto;
+    opacity: 1;
+    transition: max-height 0s, opacity 300ms ease-in-out;
+} */
+
+.ctrl {
+    padding: 8px 5px;
+    width: 30px;
+    text-align: center;
+    background: rgba(200, 200, 200, 0.8);
+    display: inline-block;
+    cursor: pointer;
+}
+
+.ctrl:hover {
+    background: rgba(200, 200, 200, 1);
+}
+
+.ctrl-toggle {
+    display: inline-block;
+}
+
+.ctrl-toggle-off {
+    display: none;
+}
+
+.toggle-bar {
+    display: inline-block;
+    /* transform: translateX(10px);
+    transition: all 2s ease-in-out; */
+}
+
+.ctrl-toggle-button {
+    display: inline-block;
+}
+
+.ctrl-mobile {
+    display: inline-block;
+}
+
+
+/* .transition-button {
+    transform: translateX(50%);
+    translate: all 2s ease-in-out;
+} */
+
+.map {
+    position: absolute;
+    background-color: rgb(51, 45, 45);
+    top: 0;
+    left: 70%;
+    width: 350px;
+    height: 400px;
+    z-index: 2;
+    opacity: 0.6;
+    background-image: url('/assets/test.png');
+}
+
+#first-scene {
+    position: absolute;
+    top: 260px;
+    left: 90px;
+}
+
+#second-scene {
+    position: absolute;
+    top: 260px;
+    left: 200px;
+}
+
+.point:hover {
+    fill: rgb(145, 135, 135);
+}
+
+.point:active {
+    fill: rgb(102, 95, 95)
+}
+
+.point input[type=radio] {
+    display: none;
+}
+
+.point label {
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    padding-left: 25px;
+    margin-right: 0;
+    line-height: 18px;
+    user-select: none;
+}
+
+.point label:before {
+    content: "";
+    display: inline-block;
+    width: 17px;
+    height: 18px;
+    position: absolute;
+    left: 0;
+    bottom: 1px;
+    background: url(https://snipp.ru/img/radio-1.png) 0 0 no-repeat;
+}
+
+
+/* Checked */
+
+.point input[type=radio]:checked+label:before {
+    background: url(https://snipp.ru/img/radio-2.png) 0 0 no-repeat;
+}
+
+
+/* Hover */
+
+.point label:hover:before {
+    filter: brightness(120%);
+}
+
+
+/* Disabled */
+
+.point input[type=radio]:disabled+label:before {
+    filter: grayscale(100%);
+}
+
+.add-red {
+    fill: red;
+}
+
+.add-red:hover {
+    fill: rgb(255, 86, 86)
+}
+
+.add-red:active {
+    fill: rgb(221, 5, 5);
+}
+
+@media (max-width:1000px) {
+    .map {
+        left: 60%
+    }
+}
+
+@media (max-width: 575px) {
+    #panorama {
+        height: 86.2vh;
+    }
+    .ctrl-toggle {
+        display: inline-block;
+    }
+    .toggle-bar {
+        position: absolute;
+        left: 0;
+        top: -15.2vh;
+    }
+    .toggle-bar-add {
+        top: -8.5vh;
+    }
+    .ctrl-mobile {
+        display: none;
+    }
+    .ctrl-toggle-on {
+        animation: hide 1s linear;
+        animation-fill-mode: forwards;
+        display: inline-block;
+    }
+    .map {
+        width: 150px;
+        height: 200px;
+        left: 58%;
+    }
+}
