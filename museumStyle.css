@@ -83,7 +83,7 @@
 }
 
 #first-scene {
-    position: absolute;
+    position: relative;
     top: 260px;
     left: 90px;
 }
@@ -94,6 +94,16 @@
     left: 200px;
 }
 
+.point {
+    position: relative;
+}
+
+.pnlm-tooltip {
+    cursor: pointer;
+}
+
+
+/* 
 .point:hover {
     fill: rgb(145, 135, 135);
 }
@@ -130,22 +140,80 @@
 
 /* Checked */
 
-.point input[type=radio]:checked+label:before {
+
+/* .point input[type=radio]:checked+label:before {
     background: url(https://snipp.ru/img/radio-2.png) 0 0 no-repeat;
-}
+} */
 
 
 /* Hover */
 
-.point label:hover:before {
+
+/* .point label:hover:before {
     filter: brightness(120%);
-}
+} */
 
 
 /* Disabled */
 
-.point input[type=radio]:disabled+label:before {
+
+/* .point input[type=radio]:disabled+label:before {
     filter: grayscale(100%);
+} */
+
+*/ [type="radio"]:checked,
+[type="radio"]:not(:checked) {
+    position: absolute;
+    left: -9999px;
+}
+
+[type="radio"]:checked+label,
+[type="radio"]:not(:checked)+label {
+    position: relative;
+    padding-left: 28px;
+    cursor: pointer;
+    line-height: 20px;
+    display: inline-block;
+    color: #666;
+}
+
+[type="radio"]:checked+label:before,
+[type="radio"]:not(:checked)+label:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 18px;
+    height: 18px;
+    border: 1px solid black;
+    border-radius: 100%;
+    background: white;
+}
+
+[type="radio"]:checked+label:after,
+[type="radio"]:not(:checked)+label:after {
+    content: '';
+    width: 12px;
+    height: 12px;
+    background: red;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    border-radius: 100%;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+
+[type="radio"]:not(:checked)+label:after {
+    opacity: 0;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+}
+
+[type="radio"]:checked+label:after {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
 }
 
 .add-red {
@@ -193,5 +261,30 @@
         width: 150px;
         height: 200px;
         left: 58%;
+        background-size: contain;
+    }
+    #first-scene {
+        top: 125px;
+        left: 45px;
+    }
+    #second-scene {
+        top: 125px;
+        left: 100px;
+    }
+    [type="radio"]:checked+label:before,
+    [type="radio"]:not(:checked)+label:before {
+        width: 10px;
+        height: 10px;
+    }
+    [type="radio"]:checked+label:after,
+    [type="radio"]:not(:checked)+label:after {
+        width: 8px;
+        height: 8px;
+        top: 2px;
+        left: 2px;
+    }
+    [type="radio"]:checked+label,
+    [type="radio"]:not(:checked)+label {
+        padding-left: 14px;
     }
 }

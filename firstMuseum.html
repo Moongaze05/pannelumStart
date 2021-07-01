@@ -8,6 +8,11 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css" />
     <link rel="stylesheet" href="museumStyle.css">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
+    <style>
+        .first-hotspot {
+            cursor: pointer;
+        }
+    </style>
 </head>
 
 <body>
@@ -48,12 +53,12 @@
              </svg>
             </div> -->
             <div class="point" id="first-scene">
-                <input type="radio" name="radio" id="first-radio">
-                <label for="first-radio"></label>
+                <input type="radio" name="radio-group" id="first-radio" style="display: none;">
+                <label for="first-radio">1</label>
             </div>
             <div class="point" id="second-scene">
-                <input type="radio" name="radio" id="second-radio">
-                <label for="second-radio"></label>
+                <input type="radio" name="radio-group" id="second-radio" style="display: none;">
+                <label for="second-radio">2</label>
             </div>
         </div>
     </div>

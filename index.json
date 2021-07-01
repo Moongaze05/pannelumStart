@@ -4,7 +4,7 @@
         "firstScene": "first",
         "sceneFadeDuration": 2000,
         "autoLoad": true,
-        "autoRotate": 0.5,
+        "autoRotate": 0,
         "autoRotateInactivityDelay": 5000,
         "yaw": 180,
         "previewTitle": "Первый зал",
