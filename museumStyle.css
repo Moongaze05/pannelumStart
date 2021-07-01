@@ -83,7 +83,7 @@
 }
 
 #first-scene {
-    position: relative;
+    position: absolute;
     top: 260px;
     left: 90px;
 }
@@ -102,65 +102,6 @@
     cursor: pointer;
 }
 
-
-/* 
-.point:hover {
-    fill: rgb(145, 135, 135);
-}
-
-.point:active {
-    fill: rgb(102, 95, 95)
-}
-
-.point input[type=radio] {
-    display: none;
-}
-
-.point label {
-    display: inline-block;
-    cursor: pointer;
-    position: relative;
-    padding-left: 25px;
-    margin-right: 0;
-    line-height: 18px;
-    user-select: none;
-}
-
-.point label:before {
-    content: "";
-    display: inline-block;
-    width: 17px;
-    height: 18px;
-    position: absolute;
-    left: 0;
-    bottom: 1px;
-    background: url(https://snipp.ru/img/radio-1.png) 0 0 no-repeat;
-}
-
-
-/* Checked */
-
-
-/* .point input[type=radio]:checked+label:before {
-    background: url(https://snipp.ru/img/radio-2.png) 0 0 no-repeat;
-} */
-
-
-/* Hover */
-
-
-/* .point label:hover:before {
-    filter: brightness(120%);
-} */
-
-
-/* Disabled */
-
-
-/* .point input[type=radio]:disabled+label:before {
-    filter: grayscale(100%);
-} */
-
 */ [type="radio"]:checked,
 [type="radio"]:not(:checked) {
     position: absolute;
@@ -174,7 +115,7 @@
     cursor: pointer;
     line-height: 20px;
     display: inline-block;
-    color: #666;
+    color: black;
 }
 
 [type="radio"]:checked+label:before,
