@@ -190,6 +190,14 @@
     background: white;
 }
 
+[type="radio"]:not(:checked):hover+label:before {
+    border: 1px solid red;
+}
+
+[type="radio"]:not(:checked):hover+label {
+    color: red;
+}
+
 [type="radio"]:checked+label:after,
 [type="radio"]:not(:checked)+label:after {
     content: '';
@@ -214,18 +222,6 @@
     opacity: 1;
     -webkit-transform: scale(1);
     transform: scale(1);
-}
-
-.add-red {
-    fill: red;
-}
-
-.add-red:hover {
-    fill: rgb(255, 86, 86)
-}
-
-.add-red:active {
-    fill: rgb(221, 5, 5);
 }
 
 @media (max-width:1000px) {

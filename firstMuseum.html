@@ -53,7 +53,7 @@
              </svg>
             </div> -->
             <div class="point" id="first-scene">
-                <input type="radio" name="radio-group" id="first-radio" style="display: none;">
+                <input type="radio" name="radio-group" id="first-radio" style="display: none;" checked>
                 <label for="first-radio">1</label>
             </div>
             <div class="point" id="second-scene">
@@ -70,18 +70,14 @@
         var data = JSON.parse(request.responseText);
 
         let viewer = pannellum.viewer('panorama', data);
-        let points = document.querySelectorAll('.point');
+        let radioHotSpots = document.querySelectorAll('.point');
 
-        points.forEach(point => {
+        radioHotSpots.forEach(point => {
             point.addEventListener('click', (event) => {
                 let target = event.currentTarget;
-                fillRed(target);
+                viewer.loadScene(target.id);
             });
         });
-
-        function fillRed(target) {
-            target.classList.toggle('add-red');
-        }
 
         function toggleBar() {
             let buttons = document.querySelectorAll('.ctrl-nav')
