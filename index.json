@@ -36,7 +36,9 @@
                     "yaw": 277,
                     "type": "scene",
                     "text": "Второй зал",
-                    "sceneId": "second-scene"
+                    "sceneId": "second-scene",
+                    "clickHandlerArgs": "sceneId",
+                    "clickHandlerFunc": "turnRadio"
                 }
             ]
         },
