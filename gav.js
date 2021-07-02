@@ -1,4 +1,4 @@
-{
+const obj = {
     "default": {
         "author": "easycg",
         "firstScene": "first-scene",
@@ -36,7 +36,10 @@
                     "yaw": 277,
                     "type": "scene",
                     "text": "Второй зал",
-                    "sceneId": "second-scene"
+                    "sceneId": "second-scene",
+                    "clickHandlerFunc": function() {
+                        console.log('ga')
+                    }
                 }
             ]
         },

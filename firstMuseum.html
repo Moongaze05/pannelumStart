@@ -13,6 +13,7 @@
             cursor: pointer;
         }
     </style>
+    <script src="gav.js"></script>
 </head>
 
 <body>
@@ -44,12 +45,13 @@
     </div>
 
     <script>
-        let request = new XMLHttpRequest();
-        request.open("GET", "./index.json", false);
-        request.send(null)
-        var data = JSON.parse(request.responseText);
+        // let request = new XMLHttpRequest();
+        // request.open("GET", "./index.json", false);
+        // request.send(null)
+        // var data = JSON.parse(request.responseText);
 
-        let viewer = pannellum.viewer('panorama', data);
+        console.log(obj);
+        let viewer = pannellum.viewer('panorama', obj);
         let radioHotSpots = document.querySelectorAll('.point');
 
         radioHotSpots.forEach(point => {
@@ -64,6 +66,10 @@
             let scene = 'scene';
             hotSpot.id = hotSpot.id.replace(scene, 'radio');
             hotSpot = hotSpot.checked;
+        };
+
+        function log() {
+            console.log('')
         };
 
         function toggleBar() {
