@@ -1,3 +1,10 @@
+function turnRadio(sceneId) {
+    let hotSpot = document.getElementById(sceneId);
+    let scene = 'scene';
+    hotSpot.id = hotSpot.id.replace(scene, 'radio');
+    hotSpot = hotSpot.firstElementChild.checked;
+};
+
 const obj = {
     "default": {
         "author": "easycg",
@@ -38,8 +45,12 @@ const obj = {
                     "text": "Второй зал",
                     "sceneId": "second-scene",
                     "clickHandlerFunc": function() {
-                        console.log('ga')
-                    }
+                        let hotSpot = document.getElementById(this.sceneId);
+                        hotSpot.id = hotSpot.id.replace('scene', 'radio');
+                        hotSpot.firstElementChild.checked = true;
+                        hotSpot.id = hotSpot.id.replace('radio', 'scene');
+                    },
+                    "clickHandlerArgs": "this.sceneId",
                 }
             ]
         },
@@ -54,7 +65,14 @@ const obj = {
                 "yaw": 75,
                 "type": "scene",
                 "text": "Первый зал",
-                "sceneId": "first-scene"
+                "sceneId": "first-scene",
+                "clickHandlerFunc": function() {
+                    let hotSpot = document.getElementById(this.sceneId);
+                    hotSpot.id = hotSpot.id.replace('scene', 'radio');
+                    hotSpot.firstElementChild.checked = true;
+                    hotSpot.id = hotSpot.id.replace('radio', 'scene');
+                },
+                "clickHandlerArgs": "this.sceneId",
             }]
         }
     }

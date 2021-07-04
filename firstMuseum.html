@@ -13,7 +13,7 @@
             cursor: pointer;
         }
     </style>
-    <script src="gav.js"></script>
+    <script src="./museum.js"></script>
 </head>
 
 <body>
@@ -45,11 +45,6 @@
     </div>
 
     <script>
-        // let request = new XMLHttpRequest();
-        // request.open("GET", "./index.json", false);
-        // request.send(null)
-        // var data = JSON.parse(request.responseText);
-
         console.log(obj);
         let viewer = pannellum.viewer('panorama', obj);
         let radioHotSpots = document.querySelectorAll('.point');
@@ -60,13 +55,6 @@
                 viewer.loadScene(target.id);
             });
         });
-
-        let turnRadio = function(sceneId) {
-            let hotSpot = document.getElementById(sceneId);
-            let scene = 'scene';
-            hotSpot.id = hotSpot.id.replace(scene, 'radio');
-            hotSpot = hotSpot.checked;
-        };
 
         function log() {
             console.log('')
