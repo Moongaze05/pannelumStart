@@ -1,10 +1,3 @@
-function turnRadio(sceneId) {
-    let hotSpot = document.getElementById(sceneId);
-    let scene = 'scene';
-    hotSpot.id = hotSpot.id.replace(scene, 'radio');
-    hotSpot = hotSpot.firstElementChild.checked;
-};
-
 const obj = {
     "default": {
         "author": "easycg",
@@ -77,3 +70,7 @@ const obj = {
         }
     }
 }
+export let viewer = pannellum.viewer('panorama', obj);
+import './script/keysUp.js';
+import './script/makeRadioHotSpots.js';
+import './script/toggleBar.js';

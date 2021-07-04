@@ -13,7 +13,8 @@
             cursor: pointer;
         }
     </style>
-    <script src="./museum.js"></script>
+    <script type="module" src="./museum.js"></script>
+    <!-- <script type="module" src="./main.js"></script> -->
 </head>
 
 <body>
@@ -28,7 +29,7 @@
                 <div class="ctrl ctrl-nav ctrl-mobile" id="zoom-in">&plus;</div>
                 <div class="ctrl ctrl-nav ctrl-mobile" id="zoom-out">&minus;</div>
                 <div class="ctrl ctrl-nav ctrl-mobile" id="fullscreen">&#x2922;</div>
-                <div class="ctrl toggle-bar" id="toggle-bar" onclick="toggleBar()">&#9776;</div>
+                <div class="ctrl toggle-bar" id="toggle-bar">&#9776;</div>
             </div>
         </div>
 
@@ -43,61 +44,8 @@
             </div>
         </div>
     </div>
-
     <script>
-        console.log(obj);
-        let viewer = pannellum.viewer('panorama', obj);
-        let radioHotSpots = document.querySelectorAll('.point');
-
-        radioHotSpots.forEach(point => {
-            point.addEventListener('click', (event) => {
-                const target = event.currentTarget;
-                viewer.loadScene(target.id);
-            });
-        });
-
-        function log() {
-            console.log('')
-        };
-
-        function toggleBar() {
-            let buttons = document.querySelectorAll('.ctrl-nav')
-            buttons.forEach(element => {
-                element.classList.toggle('ctrl-toggle-off');
-                element.classList.toggle('ctrl-mobile');
-                element.classList.toggle('ctrl-toggle-on');
-            });
-            let buttonToggle = document.getElementById('toggle-bar');
-            buttonToggle.classList.toggle('toggle-bar-add');
-            buttonToggle.classList.toggle('transition-button');
-        }
-
-        function keysUp() {
-            document.getElementById('pan-up').addEventListener('click', function(e) {
-                viewer.setPitch(viewer.getPitch() + 10);
-            });
-            document.getElementById('pan-down').addEventListener('click', function(e) {
-                viewer.setPitch(viewer.getPitch() - 10);
-            });
-            document.getElementById('pan-left').addEventListener('click', function(e) {
-                viewer.setYaw(viewer.getYaw() - 10);
-            });
-            document.getElementById('pan-right').addEventListener('click', function(e) {
-                viewer.setYaw(viewer.getYaw() + 10);
-            });
-            document.getElementById('zoom-in').addEventListener('click', function(e) {
-                viewer.setHfov(viewer.getHfov() - 10);
-            });
-            document.getElementById('zoom-out').addEventListener('click', function(e) {
-                viewer.setHfov(viewer.getHfov() + 10);
-            });
-            document.getElementById('fullscreen').addEventListener('click', function(e) {
-                viewer.toggleFullscreen();
-            });
-        };
-        keysUp();
     </script>
-
 </body>
 
 </html>
