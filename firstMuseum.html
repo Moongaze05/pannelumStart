@@ -22,6 +22,7 @@
         <!-- <div style="height: 50px;">
             <audio src="./audio.wav" controls></audio>
         </div> -->
+        <button style="height:30px;width:30px" onclick="radio()">radio</button>
         <div id="controls">
             <div class="visible">
                 <div class="ctrl ctrl-nav ctrl-mobile" id="pan-up">&#9650;</div>
@@ -48,6 +49,17 @@
             </div>
         </div>
     </div>
+    <script>
+        function radio() {
+            let first = document.getElementById('first-radio');
+            let second = document.getElementById('second-radio');
+            if (first.checked) {
+                second.checked = true;
+            } else {
+                first.checked = true;
+            }
+        }
+    </script>
 </body>
 
 </html>

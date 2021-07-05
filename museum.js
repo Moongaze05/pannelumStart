@@ -18,8 +18,8 @@ const obj = {
             "title": "Первый зал",
             "sceneId": "first-scene",
             "type": "equirectangular",
-            "panorama": "./assets/img1.jpg",
-            "preview": "./assets/img1.jpg",
+            "panorama": "./assets/img1.webp",
+            "preview": "./assets/img1.webp",
             "hotSpots": [{
                     "pitch": -12,
                     "yaw": 170,
@@ -45,14 +45,22 @@ const obj = {
                     "text": "Второй зал",
                     "sceneId": "second-scene",
                     "clickHandlerFunc": function() {
-                        // let radioScene = this.sceneId.replace('scene', 'radio');
-                        // let hotSpot = document.getElementById(radioScene);
-                        let hotSpot = document.getElementById(this.sceneId);
-                        hotSpot.id = hotSpot.id.replace('scene', 'radio');
-                        hotSpot.firstElementChild.checked = true;
-                        // hotSpot.style.backgroundColor = 'blue';
-                        // radioScene = radioScene.replace('radio', 'scene');
-                        hotSpot.id = hotSpot.id.replace('radio', 'scene');
+                        console.log('смена 1');
+                        let hotSpot = document.getElementById('second-radio');
+                        // hotSpot.id = hotSpot.id.replace('scene', 'radio');
+                        // hotSpot.firstElementChild.checked = true;
+                        // hotSpot.id = hotSpot.id.replace('radio', 'scene');
+                        hotSpot.checked = true;
+                        // radioOn();
+
+                        // console.log('смена 2');
+                        // let first = document.getElementById('first-radio');
+                        // let second = document.getElementById('second-radio');
+                        // if (first.checked) {
+                        //     second.checked = true;
+                        // } else {
+                        //     first.checked = true;
+                        // }
                     },
                     "clickHandlerArgs": "this.sceneId",
                 }
@@ -62,8 +70,8 @@ const obj = {
         "second-scene": {
             "title": "Второй зал",
             "type": "equirectangular",
-            "panorama": "./assets/img2.jpg",
-            "preview": "./assets/img2.jpg",
+            "panorama": "./assets/img2.webp",
+            "preview": "./assets/img2.webp",
             "hotSpots": [{
                 "pitch": -25,
                 "yaw": 75,
@@ -71,11 +79,15 @@ const obj = {
                 "text": "Первый зал",
                 "sceneId": "first-scene",
                 "clickHandlerFunc": function() {
-                    // let hotSpot = document.getElementById(this.sceneId);
+                    console.log('смена 2');
+
+                    // console.log('смена 4');
+                    let hotSpot = document.getElementById('first-radio');
                     // hotSpot.id = hotSpot.id.replace('scene', 'radio');
                     // hotSpot.firstElementChild.checked = true;
                     // hotSpot.id = hotSpot.id.replace('radio', 'scene');
-                    alert('agv');
+                    hotSpot.checked = true;
+                    // radioOn();
                 },
                 "clickHandlerArgs": "this.sceneId",
             }]
@@ -83,6 +95,23 @@ const obj = {
     }
 }
 export let viewer = pannellum.viewer('panorama', obj);
+
+function radioOn() {
+    let first = document.getElementById('first-radio');
+    let second = document.getElementById('second-radio');
+    if (first.checked) {
+        second.checked = true;
+    } else {
+        first.checked = true;
+    }
+}
+
+// viewer.on('scenechange', function() {
+//     let hotSpot = document.getElementById(this.sceneId);
+//     hotSpot.id = hotSpot.id.replace('scene', 'radio');
+//     hotSpot.firstElementChild.checked = true;
+//     hotSpot.id = hotSpot.id.replace('radio', 'scene');
+// })
 import './script/keysUp.js';
 import './script/makeRadioHotSpots.js';
 import './script/toggleBar.js';
