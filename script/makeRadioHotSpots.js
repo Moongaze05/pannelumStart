@@ -5,6 +5,7 @@ let radioHotSpots = document.querySelectorAll('.point');
 radioHotSpots.forEach(point => {
     point.addEventListener('click', (event) => {
         const target = event.currentTarget;
+        alert('gav');
         viewer.loadScene(target.id);
     });
 });

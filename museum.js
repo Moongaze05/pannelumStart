@@ -71,10 +71,11 @@ const obj = {
                 "text": "Первый зал",
                 "sceneId": "first-scene",
                 "clickHandlerFunc": function() {
-                    let hotSpot = document.getElementById(this.sceneId);
-                    hotSpot.id = hotSpot.id.replace('scene', 'radio');
-                    hotSpot.firstElementChild.checked = true;
-                    hotSpot.id = hotSpot.id.replace('radio', 'scene');
+                    // let hotSpot = document.getElementById(this.sceneId);
+                    // hotSpot.id = hotSpot.id.replace('scene', 'radio');
+                    // hotSpot.firstElementChild.checked = true;
+                    // hotSpot.id = hotSpot.id.replace('radio', 'scene');
+                    alert('agv');
                 },
                 "clickHandlerArgs": "this.sceneId",
             }]
