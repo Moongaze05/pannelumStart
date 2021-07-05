@@ -94,6 +94,7 @@ const obj = {
         }
     }
 }
+
 export let viewer = pannellum.viewer('panorama', obj);
 
 function radioOn() {
@@ -106,12 +107,10 @@ function radioOn() {
     }
 }
 
-// viewer.on('scenechange', function() {
-//     let hotSpot = document.getElementById(this.sceneId);
-//     hotSpot.id = hotSpot.id.replace('scene', 'radio');
-//     hotSpot.firstElementChild.checked = true;
-//     hotSpot.id = hotSpot.id.replace('radio', 'scene');
-// })
+viewer.on('scenechange', function(ev) {
+    console.log(ev);
+})
+
 import './script/keysUp.js';
 import './script/makeRadioHotSpots.js';
 import './script/toggleBar.js';
