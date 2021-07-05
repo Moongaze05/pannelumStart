@@ -43,26 +43,7 @@ const obj = {
                     "yaw": 277,
                     "type": "scene",
                     "text": "Второй зал",
-                    "sceneId": "second-scene",
-                    "clickHandlerFunc": function() {
-                        console.log('смена 1');
-                        let hotSpot = document.getElementById('second-radio');
-                        // hotSpot.id = hotSpot.id.replace('scene', 'radio');
-                        // hotSpot.firstElementChild.checked = true;
-                        // hotSpot.id = hotSpot.id.replace('radio', 'scene');
-                        hotSpot.checked = true;
-                        // radioOn();
-
-                        // console.log('смена 2');
-                        // let first = document.getElementById('first-radio');
-                        // let second = document.getElementById('second-radio');
-                        // if (first.checked) {
-                        //     second.checked = true;
-                        // } else {
-                        //     first.checked = true;
-                        // }
-                    },
-                    "clickHandlerArgs": "this.sceneId",
+                    "sceneId": "second-scene"
                 }
             ]
         },
@@ -77,19 +58,7 @@ const obj = {
                 "yaw": 75,
                 "type": "scene",
                 "text": "Первый зал",
-                "sceneId": "first-scene",
-                "clickHandlerFunc": function() {
-                    console.log('смена 2');
-
-                    // console.log('смена 4');
-                    let hotSpot = document.getElementById('first-radio');
-                    // hotSpot.id = hotSpot.id.replace('scene', 'radio');
-                    // hotSpot.firstElementChild.checked = true;
-                    // hotSpot.id = hotSpot.id.replace('radio', 'scene');
-                    hotSpot.checked = true;
-                    // radioOn();
-                },
-                "clickHandlerArgs": "this.sceneId",
+                "sceneId": "first-scene"
             }]
         }
     }
@@ -97,18 +66,12 @@ const obj = {
 
 export let viewer = pannellum.viewer('panorama', obj);
 
-function radioOn() {
-    let first = document.getElementById('first-radio');
-    let second = document.getElementById('second-radio');
-    if (first.checked) {
-        second.checked = true;
-    } else {
-        first.checked = true;
-    }
-}
 
 viewer.on('scenechange', function(ev) {
-    console.log(ev);
+    let hotSpot = document.getElementById(ev);
+    hotSpot.id = hotSpot.id.replace('scene', 'radio');
+    hotSpot.firstElementChild.checked = true;
+    hotSpot.id = hotSpot.id.replace('radio', 'scene');
 })
 
 import './script/keysUp.js';
