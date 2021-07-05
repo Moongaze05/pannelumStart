@@ -64,12 +64,6 @@
     display: inline-block;
 }
 
-
-/* .transition-button {
-    transform: translateX(50%);
-    translate: all 2s ease-in-out;
-} */
-
 .map {
     position: absolute;
     background-color: rgb(51, 45, 45);
@@ -102,7 +96,7 @@
     cursor: pointer;
 }
 
-*/ [type="radio"]:checked,
+[type="radio"]:checked,
 [type="radio"]:not(:checked) {
     position: absolute;
     left: -9999px;

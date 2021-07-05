@@ -1,5 +1,6 @@
 const obj = {
     "default": {
+        "load": true,
         "author": "easycg",
         "firstScene": "first-scene",
         "sceneFadeDuration": 2000,
@@ -8,7 +9,8 @@ const obj = {
         "autoRotateInactivityDelay": 5000,
         "yaw": 180,
         "previewTitle": "Первый зал",
-        "showControls": false
+        "showControls": false,
+
     },
 
     "scenes": {
@@ -22,7 +24,12 @@ const obj = {
                     "pitch": -12,
                     "yaw": 170,
                     "type": "info",
-                    "text": "Картина Айвазовского ''Девятый вал''."
+                    "text": "Картина Айвазовского ''Девятый вал''.",
+                    "clickHandlerFunc": function() {
+                        let mediaWindow = document.getElementById('panorama');
+                        mediaWindow.insertAdjacentHTML('afterbegin', description);
+                    },
+                    "clickHandlerArgs": 'description'
                 },
                 {
                     "pitch": -10,
@@ -38,9 +45,13 @@ const obj = {
                     "text": "Второй зал",
                     "sceneId": "second-scene",
                     "clickHandlerFunc": function() {
+                        // let radioScene = this.sceneId.replace('scene', 'radio');
+                        // let hotSpot = document.getElementById(radioScene);
                         let hotSpot = document.getElementById(this.sceneId);
                         hotSpot.id = hotSpot.id.replace('scene', 'radio');
                         hotSpot.firstElementChild.checked = true;
+                        // hotSpot.style.backgroundColor = 'blue';
+                        // radioScene = radioScene.replace('radio', 'scene');
                         hotSpot.id = hotSpot.id.replace('radio', 'scene');
                     },
                     "clickHandlerArgs": "this.sceneId",
@@ -74,3 +85,4 @@ export let viewer = pannellum.viewer('panorama', obj);
 import './script/keysUp.js';
 import './script/makeRadioHotSpots.js';
 import './script/toggleBar.js';
+import './script/mediaDescription.js';
