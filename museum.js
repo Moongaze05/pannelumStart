@@ -29,7 +29,7 @@ const obj = {
                         let mediaWindow = document.getElementById('panorama');
                         mediaWindow.insertAdjacentHTML('afterbegin', description);
                     },
-                    "clickHandlerArgs": 'description'
+                    "clickHandlerArgs": 'description',
                 },
                 {
                     "pitch": -10,
@@ -67,6 +67,7 @@ const obj = {
 export let viewer = pannellum.viewer('panorama', obj);
 
 
+// Отслеживание смены сцены и смена радио
 viewer.on('scenechange', function(ev) {
     let hotSpot = document.getElementById(ev);
     hotSpot.id = hotSpot.id.replace('scene', 'radio');
@@ -77,4 +78,4 @@ viewer.on('scenechange', function(ev) {
 import './script/keysUp.js';
 import './script/makeRadioHotSpots.js';
 import './script/toggleBar.js';
-import './script/mediaDescription.js';
+import { description } from './script/mediaDescription.js';

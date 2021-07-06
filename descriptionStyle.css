@@ -1,0 +1,56 @@
+.media-info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(53, 35, 31);
+}
+
+.media-picture {
+    display: flex;
+    justify-content: center;
+    margin-top: 5vh;
+}
+
+.media-img {
+    width: 90vw;
+    height: 80vh;
+}
+
+.media-button-cross {
+    position: absolute;
+    left: 97%;
+    top: 2%;
+    background-color: inherit;
+    border: none;
+}
+
+.media-button-cross {
+    fill: white;
+}
+
+.media-button-cross:hover {
+    fill: red;
+}
+
+.media-description {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 15px;
+}
+
+.media-description-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    color: rgb(211, 197, 197);
+}
+
+.media-description-audio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

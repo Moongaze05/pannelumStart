@@ -1,3 +1,21 @@
-<div class="media-info">
-    gav
+<div class="media-info" id="media1">
+    <button onclick="cross()" class='media-button-cross'>
+        ${svg}
+    </button>
+    <div class="media-picture">
+        <img src="./assets/pic1.jpg" alt="Картина Айвазовского ''Девятый вал''" class='media-img'>
+    </div>
+    <div class="media-description">
+        <h3>Картина Айвазовского</h3>
+        <h4>"Девятый вал"</h4>
+    </div>
+    <div class="media-audio">
+        <audio src="./audio.wav" controls></audio>
+    </div>
+    <script>
+        function cross() {
+            let media1 = document.getElementById('media1');
+            media1.style.display = 'none';
+        }
+    </script>
 </div>
