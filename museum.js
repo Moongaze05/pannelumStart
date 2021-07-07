@@ -75,6 +75,16 @@ viewer.on('scenechange', function(ev) {
     hotSpot.id = hotSpot.id.replace('radio', 'scene');
 })
 
+/** 
+ * Функция закрытия описания хотспота
+ * @param { String } id Id раскрывающегося описания
+ */
+
+function cross(id) {
+    let media1 = document.getElementById(id);
+    media1.remove();
+}
+
 import './script/keysUp.js';
 import './script/makeRadioHotSpots.js';
 import './script/toggleBar.js';
