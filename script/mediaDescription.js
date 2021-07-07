@@ -11,8 +11,8 @@ export let description =
     </div>
     <div class="media-description">
         <div class="media-description-text">
-            <h3>Картина Айвазовского</h3>
-            <h4>"Девятый вал"</h4>
+            <h3>"Девятый вал"</h3>
+            <h4>Картина Айвазовского</h4>
         </div>
         <div class="media-description-audio">
             <audio src="./audio.wav" controls></audio>

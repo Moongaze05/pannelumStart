@@ -150,7 +150,18 @@
 
 @media (max-width:1000px) {
     .map {
-        left: 60%
+        left: 68%;
+        width: 225px;
+        height: 275px;
+        background-size: contain;
+    }
+    #first-scene {
+        top: 175px;
+        left: 60px;
+    }
+    #second-scene {
+        top: 175px;
+        left: 135px;
     }
 }
 

@@ -15,8 +15,8 @@
 }
 
 .media-img {
-    width: 90vw;
-    height: 80vh;
+    max-width: 90vw;
+    max-height: 80vh;
 }
 
 .media-button-cross {
@@ -25,10 +25,8 @@
     top: 2%;
     background-color: inherit;
     border: none;
-}
-
-.media-button-cross {
     fill: white;
+    cursor: pointer;
 }
 
 .media-button-cross:hover {
@@ -53,4 +51,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+@media (max-width:580px) {
+    .media-description {
+        flex-direction: column;
+    }
+    .media-description-text {
+        align-items: center;
+    }
+    .media-button-cross {
+        left: 94%;
+    }
 }
