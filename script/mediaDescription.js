@@ -5,7 +5,7 @@ let id = "media1";
 
 export let description =
     `<div class="media-info" id=${id}>
-    <button onclick="cross()" class='media-button-cross'>
+    <button onclick="cross(${id}.id)" class='media-button-cross'>
         ${svg}
     </button>
     <div class="media-picture">
