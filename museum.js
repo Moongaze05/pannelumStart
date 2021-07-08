@@ -24,7 +24,7 @@ const obj = {
                     "pitch": -12,
                     "yaw": 170,
                     "type": "info",
-                    "text": "Картина Айвазовского ''Девятый вал''.",
+                    "text": `"${namePic}" <br/> ${authorPic}`,
                     "clickHandlerFunc": function() {
                         let mediaWindow = document.getElementById('panorama');
                         mediaWindow.insertAdjacentHTML('afterbegin', description);
@@ -85,7 +85,19 @@ function cross(id) {
     media1.remove();
 }
 
+let svg = `<svg>
+<circle r="35" cx="0" cy="0" />
+</svg>`;
+
+
+viewer.on('scenechange', function(ev) {
+    let point = document.getElementById(ev);
+    point.insertAdjacentHTML("afterbegin", svg);
+});
+
+
 import './script/keysUp.js';
 import './script/makeRadioHotSpots.js';
 import './script/toggleBar.js';
-import { description } from './script/mediaDescription.js';
+import { namePic, authorPic, description } from './script/mediaDescription.js';
+// import './script/circle.js';
