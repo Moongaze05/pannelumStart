@@ -70,10 +70,8 @@ export let viewer = pannellum.viewer('panorama', obj);
 // Отслеживание смены сцены и смена радио
 viewer.on('scenechange', function(ev) {
     let hotSpot = document.getElementById(ev);
-    hotSpot.id = hotSpot.id.replace('scene', 'radio');
     hotSpot.firstElementChild.checked = true;
-    hotSpot.id = hotSpot.id.replace('radio', 'scene');
-})
+});
 
 /** 
  * Функция закрытия описания хотспота
@@ -85,14 +83,25 @@ function cross(id) {
     media1.remove();
 }
 
-let svg = `<svg>
-<circle r="35" cx="0" cy="0" />
+let svgData = `<svg class="svg-sector">
+<path fill="rgb(255,255,255)" fill-opacity="0.7" d="M 65.5,65.5 L 23.34187850181081,17.347193313951905 A 64,64 0 0 1 107.65812149818916,17.347193313951877 Z"></path>
 </svg>`;
 
 
+// viewer.on('load', function(ev) {
+//     if (viewer.isLoaded) {
+//         let point = document.getElementById(ev);
+//         point.insertAdjacentHTML("afterbegin", svg);
+//     }
+// });
+
 viewer.on('scenechange', function(ev) {
     let point = document.getElementById(ev);
-    point.insertAdjacentHTML("afterbegin", svg);
+    if (point.firstElementChild.checked) {
+        point.insertAdjacentHTML("beforeend", svgData);
+    } else {
+        point.removeChild('svg');
+    }
 });
 
 
@@ -100,4 +109,3 @@ import './script/keysUp.js';
 import './script/makeRadioHotSpots.js';
 import './script/toggleBar.js';
 import { namePic, authorPic, description } from './script/mediaDescription.js';
-// import './script/circle.js';

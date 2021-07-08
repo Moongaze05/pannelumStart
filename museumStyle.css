@@ -85,6 +85,15 @@
     cursor: pointer;
 }
 
+.svg-sector {
+    position: absolute;
+    top: -55px;
+    left: -55px;
+    width: 130px;
+    height: 70px;
+    z-index: -1;
+}
+
 [type="radio"]:checked,
 [type="radio"]:not(:checked) {
     position: absolute;
