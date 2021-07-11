@@ -92,6 +92,7 @@
     width: 130px;
     height: 70px;
     z-index: -1;
+    padding-bottom: 50px;
 }
 
 [type="radio"]:checked,

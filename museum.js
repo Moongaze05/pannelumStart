@@ -87,21 +87,43 @@ function cross(id) {
 // let svgData = `<svg class="svg-sector">
 // <path fill="rgb(255,255,255)" fill-opacity="0.7" d="M 65.5,65.5 L 23.34187850181081,17.347193313951905 A 64,64 0 0 1 107.65812149818916,17.347193313951877 Z"></path>
 // </svg>`;
-let svgData = `<svg class="svg-sector">
+let svgData = `<svg class="svg-sector" id="sector">
 <path fill="rgb(255,255,255)" fill-opacity="0.7" d="M 65.5,65.5 L 23.34187850181081,17.347193313951905 A 64,64 0 0 1 107.65812149818916,17.347193313951877 Z"></path>
 </svg>`;
 
 viewer.on('scenechange', function(ev) {
-    let prePoint = document.querySelector('.svg-sector');
+    let prePoint = document.getElementById('sector');
     prePoint.remove();
     let point = document.getElementById(ev);
     point.insertAdjacentHTML("beforeend", svgData);
 });
 
 
-viewer.on('mouseup', function() {
-    console.log(viewer.getYaw())
-})
+viewer.on('zoomchange', function() {
+    // console.log(viewer.getYaw())
+    let prPoint = document.getElementById('sector');
+    prPoint.classList.add('changingSector')
+    prPoint.style.transform = `rotate(${viewer.getYaw()+180}deg)`;
+    // prPoint.style.transform = `skewX(${viewer.getHfov()/3}deg)`
+});
+
+// viewer.on('mousedown', function() {
+//     console.log(viewer.getYaw())
+//     let prPoint = document.getElementById('sector');
+//     prPoint.style.transform = `rotate(${viewer.getYaw()+180}deg)`;
+// });
+
+viewer.on('mousedown', function() {
+    // console.log(viewer.getYaw())
+    let prPoint = document.getElementById('sector');
+    prPoint.style.transform = `rotate(${viewer.getYaw()+180}deg)`;
+});
+
+// viewer.on('zoomchange', function() {
+//     console.log(viewer.getYaw())
+//     let prPoint = document.getElementById('sector');
+//     prPoint.style.transform = `skewX(-${viewer.getHfov()+180}deg)`;
+// })
 
 import './script/keysUp.js';
 import './script/makeRadioHotSpots.js';
