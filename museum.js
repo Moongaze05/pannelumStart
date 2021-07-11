@@ -20,6 +20,7 @@ const obj = {
             "type": "equirectangular",
             "panorama": "./assets/img1.webp",
             "preview": "./assets/img1.webp",
+            // "hotSpotDebug": "true",
             "hotSpots": [{
                     "pitch": -12,
                     "yaw": 170,
@@ -83,29 +84,27 @@ function cross(id) {
     media1.remove();
 }
 
+// let svgData = `<svg class="svg-sector">
+// <path fill="rgb(255,255,255)" fill-opacity="0.7" d="M 65.5,65.5 L 23.34187850181081,17.347193313951905 A 64,64 0 0 1 107.65812149818916,17.347193313951877 Z"></path>
+// </svg>`;
 let svgData = `<svg class="svg-sector">
 <path fill="rgb(255,255,255)" fill-opacity="0.7" d="M 65.5,65.5 L 23.34187850181081,17.347193313951905 A 64,64 0 0 1 107.65812149818916,17.347193313951877 Z"></path>
 </svg>`;
 
-
-// viewer.on('load', function(ev) {
-//     if (viewer.isLoaded) {
-//         let point = document.getElementById(ev);
-//         point.insertAdjacentHTML("afterbegin", svg);
-//     }
-// });
-
 viewer.on('scenechange', function(ev) {
+    let prePoint = document.querySelector('.svg-sector');
+    prePoint.remove();
     let point = document.getElementById(ev);
-    if (point.firstElementChild.checked) {
-        point.insertAdjacentHTML("beforeend", svgData);
-    } else {
-        point.removeChild('svg');
-    }
+    point.insertAdjacentHTML("beforeend", svgData);
 });
 
+
+viewer.on('mouseup', function() {
+    console.log(viewer.getYaw())
+})
 
 import './script/keysUp.js';
 import './script/makeRadioHotSpots.js';
 import './script/toggleBar.js';
 import { namePic, authorPic, description } from './script/mediaDescription.js';
+// import './script/sectorView.js';
