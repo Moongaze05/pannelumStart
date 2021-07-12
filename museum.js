@@ -75,7 +75,7 @@ viewer.on('scenechange', function(ev) {
     hotSpot.firstElementChild.checked = true;
 });
 
-/** 
+/**
  * Функция закрытия описания хотспота
  * @param { String } id Id раскрывающегося описания
  */
@@ -99,32 +99,28 @@ viewer.on('scenechange', function(ev) {
     point.insertAdjacentHTML("beforeend", svgData);
 });
 
-
-viewer.on('zoomchange', function() {
-    // console.log(viewer.getYaw())
-    let prPoint = document.getElementById('sector');
-    prPoint.classList.add('changingSector')
-    prPoint.style.transform = `rotate(${viewer.getYaw()+180}deg)`;
-    // prPoint.style.transform = `skewX(${viewer.getHfov()/3}deg)`
-});
-
-// viewer.on('mousedown', function() {
-//     console.log(viewer.getYaw())
+// viewer.on('dragover', function () {
 //     let prPoint = document.getElementById('sector');
 //     prPoint.style.transform = `rotate(${viewer.getYaw()+180}deg)`;
 // });
 
-viewer.on('mousedown', function() {
+viewer.on('zoomchange', function() {
     // console.log(viewer.getYaw())
     let prPoint = document.getElementById('sector');
     prPoint.style.transform = `rotate(${viewer.getYaw()+180}deg)`;
-});
+})
 
-// viewer.on('zoomchange', function() {
-//     console.log(viewer.getYaw())
-//     let prPoint = document.getElementById('sector');
-//     prPoint.style.transform = `skewX(-${viewer.getHfov()+180}deg)`;
-// })
+// console.log(document.getElementsByClassName('pnlm-dragfix')[0]);
+document.getElementsByClassName('pnlm-dragfix')[0].addEventListener('mousemove', function () {
+    let prPoint = document.getElementById('sector');
+    prPoint.style.transform = `rotate(${viewer.getYaw()+180}deg)`;
+    // console.log('awd')
+})
+document.getElementsByClassName('pnlm-dragfix')[0].addEventListener('touchmove', function () {
+    let prPoint = document.getElementById('sector');
+    prPoint.style.transform = `rotate(${viewer.getYaw()+180}deg)`;
+    // console.log('awd')
+})
 
 import './script/keysUp.js';
 import './script/makeRadioHotSpots.js';
