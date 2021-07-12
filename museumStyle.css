@@ -41,8 +41,9 @@
 
 .toggle-bar {
     display: inline-block;
-    /* transform: translateX(10px);
-    transition: all 2s ease-in-out; */
+    position: fixed;
+    bottom: 10vh;
+    left: 0;
 }
 
 .ctrl-toggle-button {
@@ -87,7 +88,7 @@
 
 .svg-sector {
     position: absolute;
-    top: -55px;
+    top: -49px;
     left: -55px;
     width: 130px;
     height: 70px;
@@ -175,20 +176,23 @@
     }
 }
 
-@media (max-width: 575px) {
+.pnlm-render-container {
+    background: black;
+}
+
+@media (max-width: 425px) {
+    /* body {
+        /* height: 100vh; */
+    /* overflow: hidden; */
+    /* } */
     #panorama {
-        height: 86.2vh;
-    }
-    .ctrl-toggle {
-        display: inline-block;
+        height: 86.6vh;
+        /* margin-bottom: 100px; */
     }
     .toggle-bar {
-        position: absolute;
+        position: fixed;
         left: 0;
-        top: -15.2vh;
-    }
-    .toggle-bar-add {
-        top: -8.5vh;
+        top: 85%;
     }
     .ctrl-mobile {
         display: none;
@@ -203,6 +207,10 @@
         height: 200px;
         left: 58%;
         background-size: contain;
+    }
+    .svg-sector {
+        left: -60px;
+        top: -54px;
     }
     #first-scene {
         top: 125px;

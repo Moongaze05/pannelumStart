@@ -11,7 +11,6 @@ function toggleBar() {
     });
     let buttonToggle = document.getElementById('toggle-bar');
     buttonToggle.classList.toggle('toggle-bar-add');
-    buttonToggle.classList.toggle('transition-button');
 }
 
 document.getElementById('toggle-bar').addEventListener('click', () => {

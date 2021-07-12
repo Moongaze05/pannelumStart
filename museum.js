@@ -9,8 +9,9 @@ const obj = {
         "autoRotateInactivityDelay": 5000,
         "yaw": 180,
         "previewTitle": "Первый зал",
-        "showControls": false,
-
+        // "showFullscreenCtrl": true,
+        // "orientationOnByDefault": true,
+        "showControls": true,
     },
 
     "scenes": {
@@ -67,8 +68,8 @@ const obj = {
 
 export let viewer = pannellum.viewer('panorama', obj);
 
-
-// Отслеживание смены сцены и смена радио
+viewer.startOrientation()
+    // Отслеживание смены сцены и смена радио
 viewer.on('scenechange', function(ev) {
     let hotSpot = document.getElementById(ev);
     hotSpot.firstElementChild.checked = true;
