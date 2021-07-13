@@ -5,14 +5,16 @@
     .logo-description {
         font-size: 50px;
     }
-    .main-card {
-        max-width: 500px;
-    }
     .main-card img {
-        max-width: 500px;
+        max-width: 350px;
     }
     .play {
-        top: 50px;
-        left: 150px;
+        width: 100px;
+        top: 60px;
+        left: 125px;
+    }
+    .main-card-city {
+        bottom: 10px;
+        left: 135px;
     }
 }
