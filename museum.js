@@ -9,9 +9,10 @@ const obj = {
         "autoRotateInactivityDelay": 5000,
         "yaw": 180,
         "previewTitle": "Первый зал",
-        // "showFullscreenCtrl": true,
         // "orientationOnByDefault": true,
         "showControls": true,
+        "showZoomCtrl": false,
+        "showFullscreenCtrl": false,
     },
 
     "scenes": {
@@ -99,24 +100,19 @@ viewer.on('scenechange', function(ev) {
     point.insertAdjacentHTML("beforeend", svgData);
 });
 
-// viewer.on('dragover', function () {
-//     let prPoint = document.getElementById('sector');
-//     prPoint.style.transform = `rotate(${viewer.getYaw()+180}deg)`;
-// });
-
 viewer.on('zoomchange', function() {
     // console.log(viewer.getYaw())
     let prPoint = document.getElementById('sector');
     prPoint.style.transform = `rotate(${viewer.getYaw()+180}deg)`;
 })
 
-// console.log(document.getElementsByClassName('pnlm-dragfix')[0]);
-document.getElementsByClassName('pnlm-dragfix')[0].addEventListener('mousemove', function () {
+
+document.getElementsByClassName('pnlm-dragfix')[0].addEventListener('mousemove', function() {
     let prPoint = document.getElementById('sector');
     prPoint.style.transform = `rotate(${viewer.getYaw()+180}deg)`;
     // console.log('awd')
 })
-document.getElementsByClassName('pnlm-dragfix')[0].addEventListener('touchmove', function () {
+document.getElementsByClassName('pnlm-dragfix')[0].addEventListener('touchmove', function() {
     let prPoint = document.getElementById('sector');
     prPoint.style.transform = `rotate(${viewer.getYaw()+180}deg)`;
     // console.log('awd')
@@ -126,4 +122,3 @@ import './script/keysUp.js';
 import './script/makeRadioHotSpots.js';
 import './script/toggleBar.js';
 import { namePic, authorPic, description } from './script/mediaDescription.js';
-// import './script/sectorView.js';

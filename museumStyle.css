@@ -42,7 +42,6 @@
 .toggle-bar {
     display: inline-block;
     position: fixed;
-    bottom: 10vh;
     left: 0;
 }
 
