@@ -5,7 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./src/style.css">
+    <link rel="stylesheet" href="./src/styleLaptop.css">
+    <link rel="stylesheet" href="./src/stylePad.css">
+    <link rel="stylesheet" href="./src/styleMobile.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
@@ -14,32 +17,43 @@
 
 <body>
     <header class="header">
-        <h1>Музеи и выставки Екатеринбурга</h1>
-    </header>
-
-    <main class="main">
-        <section class="container">
-            <h2 class="choosing">Выберите интересующий вас музей:</h2>
-            <div class="museums">
-                <div class="museum">
-                    <a href="./firstMuseum.html">
-                        <h3>Первый музей</h3>
-
-                        <img src="./assets/museum1.jpg" alt="first museum" height="400" width="550">
-                    </a>
-                </div>
-                <div class="museum">
-                    <a href="./firstMuseum.html">
-                        <h3>Второй музей</h3>
-                        <img src="./assets/museum2.jpg" alt="second museum" height="400" width="550">
-                    </a>
-                </div>
+        <div class="header-flex">
+            <div class="logo">
+                <img src="./assets/logo 1.svg" alt="logo">
+                <h2 class="logo-name">УРАЛЬСКИЙ ГОСУДАРСТВЕННЫЙ ВОЕННО-ИСТОРИЧЕСКИЙ МУЗЕЙ</h2>
             </div>
-        </section>
+            <h1 class="logo-description">Виртуальная экскурсия</h1>
+        </div>
+    </header>
+    <main class="main">
+        <div class="main-container">
+            <section class="main-card">
+                <a href="./firstMuseum.html">
+                    <div class="main-card-img">
+                        <img src="./assets/preview1.png" alt="first museum">
+                        <img class="play" src="./assets/play.svg">
+                    </div>
+                </a>
+                <div class="main-card-description">
+                    <img src="./assets/faceimg.png" alt="description">
+                </div>
+            </section>
+            <section class="main-card">
+                <a href="./firstMuseum.html">
+                    <div class="main-card-img">
+                        <img src="./assets/preview1.png" alt="first museum">
+                        <img class="play" src="./assets/play.svg">
+                    </div>
+                </a>
+                <div class="main-card-description">
+                    <img src="./assets/faceimg.png" alt="description">
+                </div>
+            </section>
+        </div>
+
     </main>
-    <footer class="footer">
-        <h4>&copy; All rights reserved. Project by EasyCG</h4>
-    </footer>
+    <footer></footer>
+
 </body>
 
 </html>

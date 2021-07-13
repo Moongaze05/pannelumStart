@@ -1,0 +1,91 @@
+.media-info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(53, 35, 31);
+    animation-duration: 1.5s;
+    animation-name: turnOn;
+}
+
+@keyframes turnOn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.media-picture {
+    display: flex;
+    justify-content: center;
+    margin-top: 5vh;
+}
+
+.media-img {
+    max-width: 90vw;
+    max-height: 80vh;
+}
+
+.media-button-cross {
+    position: absolute;
+    left: 97%;
+    top: 2%;
+    background-color: inherit;
+    border: none;
+    fill: white;
+    cursor: pointer;
+}
+
+.media-button-cross:hover {
+    fill: red;
+}
+
+.media-button-cross:active {
+    animation-duration: 1.5s;
+    animation-name: turnOut;
+}
+
+@keyframes turnOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+.media-description {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 15px;
+}
+
+.media-description-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    color: rgb(211, 197, 197);
+}
+
+.media-description-audio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width:580px) {
+    .media-description {
+        flex-direction: column;
+    }
+    .media-description-text {
+        align-items: center;
+    }
+    .media-button-cross {
+        left: 94%;
+    }
+}
