@@ -8,11 +8,13 @@ const obj = {
         "autoRotate": 0,
         "autoRotateInactivityDelay": 5000,
         "yaw": 180,
+        // "hfov": 80,
         "previewTitle": "Первый зал",
         // "orientationOnByDefault": true,
         "showControls": true,
         "showZoomCtrl": false,
         "showFullscreenCtrl": false,
+        "compass": false,
     },
 
     "scenes": {
@@ -21,7 +23,7 @@ const obj = {
             "sceneId": "first-scene",
             "type": "equirectangular",
             "panorama": "./assets/img1.webp",
-            "preview": "./assets/img1.webp",
+            // "preview": "./assets/img1.webp",
             // "hotSpotDebug": "true",
             "hotSpots": [{
                     "pitch": -12,
@@ -31,8 +33,12 @@ const obj = {
                     "clickHandlerFunc": function() {
                         let mediaWindow = document.getElementById('panorama');
                         mediaWindow.insertAdjacentHTML('afterbegin', description);
+
+                        function audioPlay() {
+                            new GreenAudioPlayer('.media-description-audio');
+                        };
                     },
-                    "clickHandlerArgs": 'description',
+                    // "clickHandlerArgs": 'description',
                 },
                 {
                     "pitch": -10,

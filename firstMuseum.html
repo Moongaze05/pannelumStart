@@ -3,13 +3,15 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>Example</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css" />
     <link rel="stylesheet" href="./src/museumStyle.css">
     <link rel="stylesheet" href="./src/descriptionStyle.css">
+    <link rel="stylesheet" href="./audioPlayer/dist/css/green-audio-player.css">
+    <script src="./audioPlayer/dist/js/green-audio-player.js"></script>
+    <!-- <script src="./script/audioPlay.js"></script> -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
-    <!-- <script type="text/javascript" src="https://cdn.pannellum.org/2.3/pannellum.js"></script> -->
     <script type="module" src="./museum.js"></script>
     <script>
         function cross(id) {
@@ -23,15 +25,15 @@
 
     <div id="panorama">
         <div id="controls">
-            <div class="visible">
-                <div class="ctrl ctrl-nav ctrl-mobile" id="pan-up">&#9650;</div>
-                <div class="ctrl ctrl-nav ctrl-mobile" id="pan-down">&#9660;</div>
-                <div class="ctrl ctrl-nav ctrl-mobile" id="pan-left">&#9668;</div>
-                <div class="ctrl ctrl-nav ctrl-mobile" id="pan-right">&#9658;</div>
-                <div class="ctrl ctrl-nav ctrl-mobile" id="zoom-in">&plus;</div>
-                <div class="ctrl ctrl-nav ctrl-mobile" id="zoom-out">&minus;</div>
-                <div class="ctrl ctrl-nav ctrl-mobile" id="fullscreen">&#x2922;</div>
-                <div class="ctrl toggle-bar" id="toggle-bar">&#9776;</div>
+            <div class="ctrl toggle-bar" id="toggle-bar">&#9660;</div>
+            <div class="visible ctrl-toggle-on">
+                <div class="ctrl ctrl-nav" id="pan-up">&#8593;</div>
+                <div class="ctrl ctrl-nav" id="pan-down">&#8595;</div>
+                <div class="ctrl ctrl-nav" id="pan-left">&#8592;</div>
+                <div class="ctrl ctrl-nav" id="pan-right">&#8594;</div>
+                <div class="ctrl ctrl-nav" id="zoom-in">&plus;</div>
+                <div class="ctrl ctrl-nav" id="zoom-out">&minus;</div>
+                <div class="ctrl ctrl-nav" id="fullscreen">&#x2922;</div>
             </div>
         </div>
 

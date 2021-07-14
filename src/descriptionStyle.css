@@ -9,6 +9,8 @@
     /* background-color: #AB2421; */
     animation-duration: 1.5s;
     animation-name: turnOn;
+    display: flex;
+    flex-direction: column;
 }
 
 @keyframes turnOn {
@@ -23,7 +25,7 @@
 .media-picture {
     display: flex;
     justify-content: center;
-    margin-top: 5vh;
+    margin-top: 10vh;
 }
 
 .media-img {
@@ -60,17 +62,18 @@
 }
 
 .media-description {
-    display: flex;
-    justify-content: space-evenly;
+    /* display: flex;
+    justify-content: space-evenly; */
     margin-top: 15px;
 }
 
 .media-description-text {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
     color: #fefefe;
+    position: absolute;
+    top: 10px;
+    left: 15.3vw;
+    border-left: 13px solid red;
+    padding-left: 15px;
 }
 
 .media-description-audio {
