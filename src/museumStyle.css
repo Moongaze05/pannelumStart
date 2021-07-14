@@ -22,10 +22,6 @@
 }
 
 .visible {
-    /* width: 50%; */
-    /* position: absolute;
-    bottom: 0px; */
-    /* left: 25%; */
     background-color: rgba(67, 66, 66, 0.7);
     border-radius: 25px;
     box-sizing: border-box;
@@ -56,21 +52,27 @@
 
 .ctrl-toggle-on {
     max-height: 100vh;
+    transform: translateY(0px);
+    transition: all 0.5s;
 }
 
 .ctrl-toggle-off {
     max-height: 0;
     padding: 0;
     overflow: hidden;
+    transform: translateY(50px);
+    transition: all 0.3s;
 }
 
 .toggle-bar {
     border: none;
     font-size: 20px;
+    transition: all 0.5s;
 }
 
 .toggle-rotate {
     transform: rotate(180deg);
+    transition: all 0.5s;
 }
 
 .ctrl-toggle-button {
@@ -205,28 +207,35 @@
 
 @media (max-width: 425px) {
     body {
-        /* height: 100vh; */
+        /* max-height: 86.6vh; */
         /* overflow: hidden; */
     }
     #panorama {
-        min-height: 86.6vh;
+        max-height: 86.6vh;
+        /* overflow: hidden; */
         /* height: env(safe-area-inset-bottom, 95.5vh); */
         /* margin-bottom: 100px; */
-        min-width: 100vw;
+        /* min-width: 100vw; */
     }
     .visible {
         max-height: 0;
         padding: 0;
         overflow: hidden;
     }
-    .ctrl-toggle-on {
-        max-height: 100vh;
-        animation: hide 1s linear;
-        animation-fill-mode: forwards;
+    .toggle-bar {
+        transform: rotate(180deg);
     }
-    /* .ctrl-toggle-off {
+    .toggle-rotate {
+        transform: rotate(0deg);
+    }
+    .ctrl-toggle-on {
+        max-height: 0;
+        transform: translateY(50px);
+    }
+    .ctrl-toggle-off {
         max-height: 100vh;
-    } */
+        transform: translateY(0px);
+    }
     .map {
         width: 150px;
         height: 200px;
