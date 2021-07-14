@@ -100,23 +100,24 @@ viewer.on('scenechange', function(ev) {
     point.insertAdjacentHTML("beforeend", svgData);
 });
 
+
+// Вращение сектора обзора
+
 viewer.on('zoomchange', function() {
     // console.log(viewer.getYaw())
     let prPoint = document.getElementById('sector');
     prPoint.style.transform = `rotate(${viewer.getYaw()+180}deg)`;
 })
-
-
 document.getElementsByClassName('pnlm-dragfix')[0].addEventListener('mousemove', function() {
     let prPoint = document.getElementById('sector');
     prPoint.style.transform = `rotate(${viewer.getYaw()+180}deg)`;
-    // console.log('awd')
 })
 document.getElementsByClassName('pnlm-dragfix')[0].addEventListener('touchmove', function() {
     let prPoint = document.getElementById('sector');
     prPoint.style.transform = `rotate(${viewer.getYaw()+180}deg)`;
-    // console.log('awd')
 })
+
+//
 
 import './script/keysUp.js';
 import './script/makeRadioHotSpots.js';

@@ -6,11 +6,18 @@
     .logo img {
         width: 375px
     }
+    .logo-description {
+        font-size: 45px;
+    }
     .main {
         margin-left: 6px
     }
     .main-card img {
         max-width: 320px;
+    }
+    .play {
+        left: 110px;
+        top: 50px;
     }
     .main-card-city {
         left: 121px;

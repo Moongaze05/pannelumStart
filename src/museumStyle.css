@@ -43,6 +43,7 @@
     display: inline-block;
     position: fixed;
     left: 0;
+    bottom: 51px;
 }
 
 .ctrl-toggle-button {
@@ -187,11 +188,6 @@
     #panorama {
         height: 86.6vh;
         /* margin-bottom: 100px; */
-    }
-    .toggle-bar {
-        position: fixed;
-        left: 0;
-        top: 85%;
     }
     .ctrl-mobile {
         display: none;
