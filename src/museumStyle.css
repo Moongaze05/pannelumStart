@@ -91,13 +91,13 @@
     background-image: url('/assets/test.png');
 }
 
-#first-scene {
+#a-scene {
     position: absolute;
     top: 260px;
     left: 90px;
 }
 
-#second-scene {
+#b-scene {
     position: absolute;
     top: 260px;
     left: 200px;
@@ -191,11 +191,11 @@
         height: 275px;
         background-size: contain;
     }
-    #first-scene {
+    #a-scene {
         top: 175px;
         left: 60px;
     }
-    #second-scene {
+    #b-scene {
         top: 175px;
         left: 135px;
     }
@@ -246,11 +246,11 @@
         left: -60px;
         top: -54px;
     }
-    #first-scene {
+    #a-scene {
         top: 125px;
         left: 45px;
     }
-    #second-scene {
+    #b-scene {
         top: 125px;
         left: 100px;
     }

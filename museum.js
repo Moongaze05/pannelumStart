@@ -1,8 +1,8 @@
-const obj = {
+let obj = {
     "default": {
         "load": true,
         "author": "easycg",
-        "firstScene": "first-scene",
+        "firstScene": "a-scene",
         "sceneFadeDuration": 2000,
         "autoLoad": true,
         "autoRotate": 0,
@@ -18,9 +18,9 @@ const obj = {
     },
 
     "scenes": {
-        "first-scene": {
+        "a-scene": {
             "title": "Первый зал",
-            "sceneId": "first-scene",
+            "sceneId": "a-scene",
             "type": "equirectangular",
             "panorama": "./assets/img1.webp",
             // "preview": "./assets/img1.webp",
@@ -38,7 +38,6 @@ const obj = {
                             new GreenAudioPlayer('.media-description-audio');
                         };
                     },
-                    // "clickHandlerArgs": 'description',
                 },
                 {
                     "pitch": -10,
@@ -52,12 +51,12 @@ const obj = {
                     "yaw": 277,
                     "type": "scene",
                     "text": "Второй зал",
-                    "sceneId": "second-scene"
+                    "sceneId": "b-scene"
                 }
             ]
         },
 
-        "second-scene": {
+        "b-scene": {
             "title": "Второй зал",
             "type": "equirectangular",
             "panorama": "./assets/img2.webp",
@@ -67,7 +66,7 @@ const obj = {
                 "yaw": 75,
                 "type": "scene",
                 "text": "Первый зал",
-                "sceneId": "first-scene"
+                "sceneId": "a-scene"
             }]
         }
     }
@@ -124,6 +123,15 @@ document.getElementsByClassName('pnlm-dragfix')[0].addEventListener('touchmove',
 })
 
 //
+
+// document.addEventListener('contextmenu', () => {
+//     let p = viewer.getPitch();
+//     let y = viewer.getYaw();
+//     let PP = viewer.getHorizonPitch();
+//     let YY = viewer.getHorizonRoll();
+//     let XX = viewer.mouseEventToCoords('contextmenu');
+//     console.log(`Ордината ${p}, Абсцисса ${y}, PP ${PP}, YY ${YY}, XX ${XX}`)
+// })
 
 import './script/keysUp.js';
 import './script/makeRadioHotSpots.js';
