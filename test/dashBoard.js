@@ -73,6 +73,7 @@ document.addEventListener('contextmenu', newFoundation);
 function newFoundation(event) {
     let XP = getXP(event);
     let YO = getYO(event);
+    let coords = undefined;
     console.log(`Ордината ${XP}, Абсцисса ${YO}`);
     if (!document.getElementById('modalwindow')) {
         panorama.insertAdjacentHTML('afterbegin', modalWindowStr);
@@ -83,10 +84,10 @@ function newFoundation(event) {
     makeNewHotSpot = function() {
         let radioInfo = document.getElementById('info')
         let radioScene = document.getElementById('scene');
-        let coords = {
-            pitch: XP,
-            yaw: YO,
-        }
+        // let coords = {
+        //     pitch: XP,
+        //     yaw: YO,
+        // }
         if (radioInfo.checked == true) {
             makeNewInfo(XP, YO);
         } else if (radioScene.checked == true) {
@@ -96,33 +97,47 @@ function newFoundation(event) {
         }
     }
     deleteNewHotSpot = function() {
-        removeHotSpot()
+        viewer.removeHotSpot(makeNewScene())
+    }
+
+    function makeNewScene(XP, YO) {
+        // coords.type = "type";
+        // coords.text = "Я охуел, но добавил хостпот сцены";
+        // coords.sceneId = "";
+        // coords.id = XP + YO;
+        if (coords == undefined) {
+            coords = {
+                "pitch": XP,
+                "yaw": YO,
+                "type": "scene",
+                "text": "Я устал, но добавил хостпот сцены",
+                "id": 1,
+            }
+            viewer.addHotSpot(coords);
+        } else {
+            return coords.id;
+        }
+    }
+
+    function makeNewInfo(XP, YO) {
+        if (coords == undefined) {
+            coords = {
+                "pitch": XP,
+                "yaw": YO,
+                "type": "info",
+                "text": "Я устал, но добавил хостпот информации",
+                "id": 2,
+            }
+            viewer.addHotSpot(coords);
+        } else {
+            return coords.id
+        }
     }
 }
 
-function makeNewScene(XP, YO) {
-    // coords.type = "type";
-    // coords.text = "Я охуел, но добавил хостпот сцены";
-    // coords.sceneId = "";
-    // coords.id = XP + YO;
-    let coords = {
-        "pitch": XP,
-        "yaw": YO,
-        "type": "scene",
-        "text": "Я устал, но добавил хостпот информации",
-    }
-    viewer.addHotSpot(coords)
-}
 
-function makeNewInfo(XP, YO) {
-    let coords = {
-        "pitch": XP,
-        "yaw": YO,
-        "type": "info",
-        "text": "Я устал, но добавил хостпот информации",
-    }
-    viewer.addHotSpot(coords)
-}
+
+
 
 function getXP(event) {
     let XP = viewer.mouseEventToCoords(event)[0];
