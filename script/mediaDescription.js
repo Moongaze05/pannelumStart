@@ -6,10 +6,11 @@ let audio = "./audio.wav";
 export let namePic = "Девятый вал";
 export let authorPic = "Картина Айвазовского";
 export let description =
-    `<script>
+    `<script defer>
         function audioPlay() {
             new GreenAudioPlayer('.media-description-audio');
         };
+        console.log('gav')
     </script>
 <div class="media-info" id=${id}>
         <div class="media-description-text">
