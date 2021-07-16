@@ -8,7 +8,7 @@ export let modalWindowStr = `<div class="modalwindow" id=modalwindow>
         <label for="scene">Сцена</label>
         <input type="radio" name="hotspot" id="scene">
     </div>
-    <button onclick="makeNewHotSpot()">Сохранить</button>
-    <button onclick="deleteNewHotSpot()">Удалить</button>
+    <button onclick="makeNewHotSpot(),cross('modalwindow')">Сохранить</button>
+    <button onclick="deleteNewHotSpot(),cross('modalwindow')">Удалить</button>
 </div>
 `;

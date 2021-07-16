@@ -51,7 +51,7 @@ let objDash = {
             "title": "Второй зал",
             "type": "equirectangular",
             "panorama": "../assets/img2.webp",
-            "preview": "../assets/img2.webp",
+            // "preview": "../assets/img2.webp",
             "hotSpots": [{
                 "pitch": -25,
                 "yaw": 75,
@@ -69,6 +69,14 @@ let panorama = document.getElementById('panorama');
 
 
 document.addEventListener('contextmenu', newFoundation);
+
+let hotspots = document.querySelectorAll('.pnlm-hotspot')
+hotspots.forEach((elem) => {
+    elem.addEventListener('contextmenu', function(event) {
+        event.stopPropagation();
+        changeFoundation();
+    });
+})
 
 function newFoundation(event) {
     let XP = getXP(event);
@@ -112,6 +120,7 @@ function newFoundation(event) {
                 "type": "scene",
                 "text": "Я устал, но добавил хостпот сцены",
                 "id": 1,
+                // "sceneId": "2",
             }
             viewer.addHotSpot(coords);
         } else {
