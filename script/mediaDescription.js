@@ -6,12 +6,7 @@ let audio = "./audio.wav";
 export let namePic = "Девятый вал";
 export let authorPic = "Картина Айвазовского";
 export let description =
-    `<script defer>
-        function audioPlay() {
-            new GreenAudioPlayer('.media-description-audio');
-        };
-        console.log('gav')
-    </script>
+    `
 <div class="media-info" id=${id}>
         <div class="media-description-text">
             <h3>"${namePic}"</h3>
@@ -23,9 +18,11 @@ export let description =
         <div class="media-picture">
             <img src="./assets/pic1.jpg" alt="${namePic} ${authorPic}" class='media-img'>
         </div>
-        <div class="media-description-audio" onload="audioPlay()">
-            <audio crossorigin>
-                <source src=${audio} type="audio/mpeg">
-            </audio>
+        <div class="media-description-audio">
+            <div class="media-description-custom-audio">
+                <audio crossorigin>
+                    <source src=${audio} type="audio/mpeg">
+                </audio>
+            </div>
         </div>
 </div>`;

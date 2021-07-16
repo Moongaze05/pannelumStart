@@ -35,8 +35,10 @@ let obj = {
                         mediaWindow.insertAdjacentHTML('afterbegin', description);
 
                         function audioPlay() {
-                            new GreenAudioPlayer('.media-description-audio');
+                            new GreenAudioPlayer('.media-description-custom-audio');
+                            console.log('gav')
                         };
+                        audioPlay();
                     },
                 },
                 {
@@ -137,3 +139,4 @@ import './script/keysUp.js';
 import './script/makeRadioHotSpots.js';
 import './script/toggleBar.js';
 import { namePic, authorPic, description } from './script/mediaDescription.js';
+import './script/audioPlay.js';

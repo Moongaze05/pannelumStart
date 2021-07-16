@@ -79,7 +79,11 @@
 .media-description-audio {
     display: flex;
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
+}
+
+.green-audio-player .volume .volume__controls.bottom {
+    bottom: 40px;
 }
 
 @media (max-width:580px) {
