@@ -11,6 +11,7 @@
     animation-name: turnOn;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 @keyframes turnOn {
@@ -25,7 +26,7 @@
 .media-picture {
     display: flex;
     justify-content: center;
-    margin-top: 10vh;
+    margin-top: 2vh;
 }
 
 .media-img {
@@ -61,29 +62,31 @@
     }
 }
 
-.media-description {
-    /* display: flex;
-justify-content: space-evenly; */
-    margin-top: 15px;
+.media-description-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2vh;
 }
 
 .media-description-text {
     color: #fefefe;
-    position: absolute;
-    top: 10px;
-    left: 15.3vw;
     border-left: 13px solid red;
     padding-left: 15px;
+    align-self: flex-start;
 }
 
 .media-description-audio {
     display: flex;
     justify-content: center;
-    /* align-items: center; */
+    align-items: center;
+    width: 100%;
 }
 
 .green-audio-player {
     background-color: #AB2421;
+    width: 100%;
 }
 
 .green-audio-player .controls .controls__slider {

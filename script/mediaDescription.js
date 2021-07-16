@@ -8,13 +8,14 @@ export let authorPic = "Картина Айвазовского";
 export let description =
     `
 <div class="media-info" id=${id}>
+    <button onclick="cross(${id}.id)" class='media-button-cross'>
+        ${svg}
+    </button>
+    <div class="media-description-wrapper">
         <div class="media-description-text">
             <h3>"${namePic}"</h3>
             <h4>${authorPic}</h4>
         </div>
-        <button onclick="cross(${id}.id)" class='media-button-cross'>
-            ${svg}
-        </button>
         <div class="media-picture">
             <img src="./assets/pic1.jpg" alt="${namePic} ${authorPic}" class='media-img'>
         </div>
@@ -25,4 +26,5 @@ export let description =
                 </audio>
             </div>
         </div>
+    </div>
 </div>`;
