@@ -10,7 +10,6 @@ let objDash = {
         "yaw": 180,
         // "hfov": 80,
         "previewTitle": "Первый зал",
-        // "orientationOnByDefault": true,
         "showControls": true,
         "showZoomCtrl": false,
         "showFullscreenCtrl": false,
@@ -51,7 +50,6 @@ let objDash = {
             "title": "Второй зал",
             "type": "equirectangular",
             "panorama": "../assets/img2.webp",
-            // "preview": "../assets/img2.webp",
             "hotSpots": [{
                 "pitch": -25,
                 "yaw": 75,

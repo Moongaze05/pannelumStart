@@ -3,6 +3,7 @@ let svg =
 
 let id = "media1";
 let audio = "./audio.wav";
+let pic = "./assets/pic1.jpg";
 export let namePic = "Девятый вал";
 export let authorPic = "Картина Айвазовского";
 export let description =
@@ -17,7 +18,7 @@ export let description =
             <h4>${authorPic}</h4>
         </div>
         <div class="media-picture">
-            <img src="./assets/pic1.jpg" alt="${namePic} ${authorPic}" class='media-img'>
+            <img src="${pic}" alt="${namePic} ${authorPic}" class='media-img'>
         </div>
         <div class="media-description-audio">
             <div class="media-description-custom-audio">

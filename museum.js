@@ -10,7 +10,6 @@ let obj = {
         "yaw": 180,
         // "hfov": 80,
         "previewTitle": "Первый зал",
-        // "orientationOnByDefault": true,
         "showControls": true,
         "showZoomCtrl": false,
         "showFullscreenCtrl": false,
@@ -23,7 +22,6 @@ let obj = {
             "sceneId": "a-scene",
             "type": "equirectangular",
             "panorama": "./assets/img1.webp",
-            // "preview": "./assets/img1.webp",
             // "hotSpotDebug": "true",
             "hotSpots": [{
                     "pitch": -12,
@@ -93,9 +91,6 @@ function cross(id) {
     media1.remove();
 }
 
-// let svgData = `<svg class="svg-sector">
-// <path fill="rgb(255,255,255)" fill-opacity="0.7" d="M 65.5,65.5 L 23.34187850181081,17.347193313951905 A 64,64 0 0 1 107.65812149818916,17.347193313951877 Z"></path>
-// </svg>`;
 let svgData = `<svg class="svg-sector" id="sector">
 <path fill="rgb(255,255,255)" fill-opacity="0.7" d="M 65.5,65.5 L 23.34187850181081,17.347193313951905 A 64,64 0 0 1 107.65812149818916,17.347193313951877 Z"></path>
 </svg>`;
@@ -139,4 +134,3 @@ import './script/keysUp.js';
 import './script/makeRadioHotSpots.js';
 import './script/toggleBar.js';
 import { namePic, authorPic, description } from './script/mediaDescription.js';
-import './script/audioPlay.js';
