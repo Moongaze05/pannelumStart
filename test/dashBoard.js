@@ -2,7 +2,7 @@ let objDash = {
     "default": {
         "load": true,
         "author": "easycg",
-        "firstScene": "1-scene",
+        "firstScene": "a-scene",
         "sceneFadeDuration": 2000,
         "autoLoad": true,
         "autoRotate": 0,
@@ -17,7 +17,7 @@ let objDash = {
     },
 
     "scenes": {
-        "1-scene": {
+        "a-scene": {
             "title": "Первый зал",
             "sceneId": "1-scene",
             "type": "equirectangular",
@@ -41,12 +41,12 @@ let objDash = {
                     "yaw": 277,
                     "type": "scene",
                     "text": "Второй зал",
-                    "sceneId": "2-scene"
+                    "sceneId": "b-scene"
                 }
             ]
         },
 
-        "2-scene": {
+        "b-scene": {
             "title": "Второй зал",
             "type": "equirectangular",
             "panorama": "../assets/img2.webp",
@@ -55,7 +55,7 @@ let objDash = {
                 "yaw": 75,
                 "type": "scene",
                 "text": "Первый зал",
-                "sceneId": "1-scene"
+                "sceneId": "a-scene"
             }]
         }
     }
@@ -66,7 +66,7 @@ let panorama = document.getElementById('panorama');
 
 
 
-document.addEventListener('contextmenu', newFoundation);
+panorama.addEventListener('contextmenu', newFoundation);
 
 let hotspots = document.querySelectorAll('.pnlm-hotspot')
 hotspots.forEach((elem) => {
@@ -154,6 +154,57 @@ function getXP(event) {
 function getYO(event) {
     let YO = viewer.mouseEventToCoords(event)[1];
     return YO;
+}
+
+let radioHotSpots = document.querySelectorAll('.point');
+// Перемещение по радио-кнопкам
+radioHotSpots.forEach(point => {
+    point.addEventListener('click', (event) => {
+        const target = event.currentTarget;
+        viewer.loadScene(target.id);
+    });
+});
+
+let svgData = `<svg class="svg-sector" id="sector">
+<path fill="rgb(255,255,255)" fill-opacity="0.7" d="M 65.5,65.5 L 23.34187850181081,17.347193313951905 A 64,64 0 0 1 107.65812149818916,17.347193313951877 Z"></path>
+</svg>`;
+
+viewer.on('scenechange', function(ev) {
+    let prePoint = document.getElementById('sector');
+    prePoint.remove();
+    let point = document.getElementById(ev);
+    point.insertAdjacentHTML("beforeend", svgData);
+});
+
+viewer.on('zoomchange', function() {
+    // console.log(viewer.getYaw())
+    let prPoint = document.getElementById('sector');
+    prPoint.style.transform = `rotate(${viewer.getYaw()+180}deg)`;
+})
+document.getElementsByClassName('pnlm-dragfix')[0].addEventListener('mousemove', function() {
+    let prPoint = document.getElementById('sector');
+    prPoint.style.transform = `rotate(${viewer.getYaw()+180}deg)`;
+})
+document.getElementsByClassName('pnlm-dragfix')[0].addEventListener('touchmove', function() {
+    let prPoint = document.getElementById('sector');
+    prPoint.style.transform = `rotate(${viewer.getYaw()+180}deg)`;
+})
+
+viewer.on('scenechange', function(ev) {
+    let hotSpot = document.getElementById(ev);
+    hotSpot.firstElementChild.checked = true;
+});
+
+let map = document.getElementById('map');
+map.addEventListener("contextmenu", function(ev) {
+    ev.preventDefault();
+    makeRadio(ev);
+});
+
+function makeRadio(ev) {
+    let xMap = ev.offsetX;
+    let yMap = ev.offsetY;
+    console.log(`X: ${xMap}, Y: ${yMap}`)
 }
 
 import { modalWindowStr } from "./modalWindow.js";
