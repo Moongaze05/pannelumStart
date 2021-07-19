@@ -88,19 +88,10 @@
     height: 400px;
     z-index: 2;
     opacity: 0.6;
-    background-image: url('/assets/test.png');
-}
-
-#a-scene {
-    position: absolute;
-    top: 260px;
-    left: 90px;
-}
-
-#b-scene {
-    position: absolute;
-    top: 260px;
-    left: 200px;
+    background-image: url('/assets/firstMuseum/map1.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .point {
@@ -133,7 +124,6 @@
     padding-left: 28px;
     cursor: pointer;
     line-height: 20px;
-    display: inline-block;
     color: black;
 }
 
@@ -143,8 +133,8 @@
     position: absolute;
     left: 0;
     top: 0;
-    width: 18px;
-    height: 18px;
+    width: 14px;
+    height: 14px;
     border: 1px solid black;
     border-radius: 100%;
     background: white;
@@ -161,8 +151,8 @@
 [type="radio"]:checked+label:after,
 [type="radio"]:not(:checked)+label:after {
     content: '';
-    width: 12px;
-    height: 12px;
+    width: 8px;
+    height: 8px;
     background: red;
     position: absolute;
     top: 4px;
@@ -189,7 +179,6 @@
         left: 68%;
         width: 225px;
         height: 275px;
-        background-size: contain;
     }
     #a-scene {
         top: 175px;
