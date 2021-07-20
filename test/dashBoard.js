@@ -80,7 +80,7 @@ function newFoundation(event) {
     let XP = getXP(event);
     let YO = getYO(event);
     let coords = undefined;
-    console.log(`Ордината ${XP}, Абсцисса ${YO}`);
+    console.log(`Ордината ${YO}, Абсцисса ${XP}`);
     if (!document.getElementById('modalwindow')) {
         panorama.insertAdjacentHTML('afterbegin', modalWindowStr);
     } else {
@@ -113,8 +113,8 @@ function newFoundation(event) {
         // coords.id = XP + YO;
         if (coords == undefined) {
             coords = {
-                "pitch": XP,
-                "yaw": YO,
+                "pitch": YO,
+                "yaw": XP,
                 "type": "scene",
                 "text": "Я устал, но добавил хостпот сцены",
                 "id": 1,
@@ -129,8 +129,8 @@ function newFoundation(event) {
     function makeNewInfo(XP, YO) {
         if (coords == undefined) {
             coords = {
-                "pitch": XP,
-                "yaw": YO,
+                "pitch": YO,
+                "yaw": XP,
                 "type": "info",
                 "text": "Я устал, но добавил хостпот информации",
                 "id": 2,
@@ -146,14 +146,14 @@ function newFoundation(event) {
 
 
 
-function getXP(event) {
-    let XP = viewer.mouseEventToCoords(event)[0];
-    return XP;
+function getYO(event) {
+    let YO = viewer.mouseEventToCoords(event)[0];
+    return YO;
 }
 
-function getYO(event) {
-    let YO = viewer.mouseEventToCoords(event)[1];
-    return YO;
+function getXP(event) {
+    let XP = viewer.mouseEventToCoords(event)[1];
+    return XP;
 }
 
 let radioHotSpots = document.querySelectorAll('.point');

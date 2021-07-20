@@ -6,7 +6,7 @@ let obj = {
         "sceneFadeDuration": 2000,
         "autoLoad": true,
         "autoRotate": 0,
-        "autoRotateInactivityDelay": 5000,
+        // "autoRotateInactivityDelay": 5000,
         "yaw": 0,
         // "hfov": 80,
         "previewTitle": "Первый зал",
