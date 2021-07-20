@@ -7,6 +7,9 @@
     width: 100%;
     height: 100vh;
     box-sizing: border-box;
+    /* margin: 30px 0; */
+    padding-bottom: env(safe-area-inset-bottom);
+    padding-top: env(safe-area-inset-top);
 }
 
 #controls {
@@ -200,11 +203,12 @@
         /* overflow: hidden; */
     }
     #panorama {
-        max-height: 86.6vh;
+        /* max-height: 86.6vh; */
         /* overflow: hidden; */
         /* height: env(safe-area-inset-bottom, 95.5vh); */
         /* margin-bottom: 100px; */
         /* min-width: 100vw; */
+        box-sizing: unset;
     }
     .visible {
         max-height: 0;
