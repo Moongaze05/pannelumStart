@@ -202,9 +202,9 @@ map.addEventListener("contextmenu", function(ev) {
 });
 
 function makeRadio(ev) {
-    let xMap = ev.offsetX;
-    let yMap = ev.offsetY;
-    console.log(`X: ${xMap}, Y: ${yMap}`)
+    let xMap = (ev.offsetX/map.offsetWidth)*100;
+    let yMap = (ev.offsetY/map.offsetHeight)*100;
+    console.log(`[${xMap}, ${yMap}]`)
 }
 
 import { modalWindowStr } from "./modalWindow.js";

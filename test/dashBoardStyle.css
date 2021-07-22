@@ -33,7 +33,10 @@
     height: 400px;
     z-index: 2;
     opacity: 0.6;
-    background-image: url('/assets/test.png');
+    background-image: url('/assets/secondMuseum/map2.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
 }
 
 #a-scene {
