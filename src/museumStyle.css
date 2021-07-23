@@ -113,16 +113,6 @@
     cursor: pointer;
 }
 
-.svg-sector {
-    position: absolute;
-    top: -49px;
-    left: -55px;
-    width: 130px;
-    height: 70px;
-    z-index: -1;
-    padding-bottom: 50px;
-}
-
 [type="radio"]:checked,
 [type="radio"]:not(:checked) {
     position: absolute;

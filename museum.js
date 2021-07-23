@@ -6,15 +6,13 @@ let obj = {
         "sceneFadeDuration": 2000,
         "autoLoad": true,
         "autoRotate": 0,
-        // "autoRotateInactivityDelay": 5000,
         "yaw": 0,
-        // "hfov": 80,
         "previewTitle": "Первый зал",
         "showControls": true,
         "showZoomCtrl": false,
         "showFullscreenCtrl": false,
         "compass": false,
-        "hotSpotDebug": true,
+        // "hotSpotDebug": true,
     },
 
     "scenes": {
@@ -68,8 +66,7 @@ let obj = {
 }
 
 export let viewer = pannellum.viewer('panorama', obj);
-let insetsLayoutMarginsFromSafeArea = true;
-viewer.startOrientation()
+
     // Отслеживание смены сцены и смена радио
 viewer.on('scenechange', function(ev) {
     let hotSpot = document.getElementById(ev);
@@ -85,35 +82,6 @@ function cross(id) {
     let media1 = document.getElementById(id);
     media1.remove();
 }
-
-let svgData = `<svg class="svg-sector" id="sector">
-<path fill="grey" fill-opacity="0.7" d="M 65.5,65.5 L 23.34187850181081,17.347193313951905 A 64,64 0 0 1 107.65812149818916,17.347193313951877 Z"></path>
-</svg>`;
-
-viewer.on('scenechange', function(ev) {
-    let prePoint = document.getElementById('sector');
-    prePoint.remove();
-    let point = document.getElementById(ev);
-    point.insertAdjacentHTML("beforeend", svgData);
-});
-
-
-// Вращение сектора обзора
-
-viewer.on('zoomchange', function() {
-    // console.log(viewer.getYaw())
-    let prPoint = document.getElementById('sector');
-    prPoint.style.transform = `rotate(${viewer.getYaw()}deg)`;
-})
-document.getElementsByClassName('pnlm-dragfix')[0].addEventListener('mousemove', function() {
-    let prPoint = document.getElementById('sector');
-    prPoint.style.transform = `rotate(${viewer.getYaw()}deg)`;
-})
-document.getElementsByClassName('pnlm-dragfix')[0].addEventListener('touchmove', function() {
-    let prPoint = document.getElementById('sector');
-    prPoint.style.transform = `rotate(${viewer.getYaw()}deg)`;
-})
-
 
 import './script/keysUp.js';
 import './script/makeRadioHotSpots.js';
