@@ -59,6 +59,7 @@
 }
 .media-description-text-left-p {
     padding:10px;
+    background-color: inherit;
 }
 
 .media-picture {
@@ -120,6 +121,7 @@
     justify-content: center;
     align-items: center;
     width: 100%;
+    margin-top:5px;
 }
 
 .green-audio-player {
@@ -167,7 +169,25 @@
 .green-audio-player .volume .volume__controls.bottom {
     bottom: 40px;
 }
-
+@media (max-width:1000px) {
+    .media-info {
+        overflow: auto;
+    }
+    .media-description-text-left {
+        width:35vw;
+        padding-left:30px;
+        height:100%
+    }
+    .media-description-text-left-wrapper {
+        width:30vw;
+    }
+    .media-description-text-toggler {
+        left:35vw;
+    }
+    .media-description-text-padding {
+        transform: translateX(-33.5vw);
+    }
+}
 @media (max-width:580px) {
     .media-description {
         flex-direction: column;
@@ -180,6 +200,7 @@
     }
     .media-description-text-left {
         width:70vw;
+        padding-left:0;
     }
     .media-description-text-left-wrapper {
         width:65vw;
