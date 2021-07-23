@@ -25,7 +25,7 @@
 
 .media-description-text-left {
     /*background-color: #AB2421;*/
-    width: 18vw;
+    width: 21vw;
     height: 100%;
     align-self: flex-start;
     position: absolute;
@@ -38,6 +38,7 @@
 .media-description-text-toggler {
     position: absolute;
     left:16vw;
+    top:10px;
     cursor: pointer;
     transition: .5s all;
     font-size: 25px;
@@ -48,7 +49,7 @@
     transform: rotate(90deg);
 }
 .media-description-text-padding {
-    transform: translateX(-16vw);
+    transform: translateX(-16.1vw);
 }
 .media-description-text-left-wrapper {
     background-color: #AB2421;
@@ -177,7 +178,7 @@
     }
     .media-description-text-left {
         width:35vw;
-        padding-left:30px;
+        padding-left:27px;
         height:100%
     }
     .media-description-text-left-wrapper {
