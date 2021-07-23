@@ -6,6 +6,45 @@ let audio = "./audio.wav";
 let pic = "./assets/pic1.jpg";
 export let namePic = "Девятый вал";
 export let authorPic = "Картина Айвазовского";
+export let mediainfo2 = `<div class="media-info" id=awd>
+            <button onClick="cross(awd.id)" class='media-button-cross'>
+                awd
+            </button>
+            <div class="media-description-text-left" id="toggle-text">
+                <div class="media-description-text-left-wrapper">
+                    <div class="media-description-text-left-header">
+                        <h3>awdawd</h3>
+                        <h4>agawg</h4>
+                    </div>
+                    <div class="media-description-text-left-p">
+                        <p>Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur adipisicing
+                            elit. A accusamus adipisci aspernatur aut culpa deleniti dicta dignissimos dolore dolorem
+                            earum est excepturi ipsa laboriosam maiores maxime minus natus nobis nulla obcaecati
+                            officiis placeat quo rem, sapiente tenetur ullam vel voluptates. adipisicing elit.
+                            Consequuntur cum cupiditate enim esse laudantium minima praesentium quae quasi voluptas
+                            voluptatum?</p>
+                    </div>
+                </div>
+                <div class="media-description-text-toggler" id="toggler-text"
+                     onClick="toggleText('toggle-text')">&#9650;</div>
+            </div>
+            <div class="media-description-wrapper">
+                <div class="media-description-text">
+                    <h3>awdawdawd</h3>
+                    <h4>ahhwaah</h4>
+                </div>
+                <div class="media-picture">
+                    <img src="./assets/test.png">
+                </div>
+                <div class="media-description-audio">
+                    <div class="media-description-custom-audio">
+                        <audio crossOrigin>
+                            <source src="" type="audio/mpeg">
+                        </audio>
+                    </div>
+                </div>
+            </div>
+        </div>`;
 export let description =
     `
 <div class="media-info" id=${id}>
@@ -30,6 +69,13 @@ export let description =
             <h4>${authorPic}</h4>
         </div>
         <div class="media-picture">
+        <button style="width: 10px;
+                       height: 20px;
+                       position: absolute;
+                        top: 20%;"
+                        onclick="insertMoreInfo()"
+        >a
+        </button>
             <img src="${pic}" alt="${namePic} ${authorPic}" class='media-img'>
         </div>
         <div class="media-description-audio">
@@ -41,3 +87,4 @@ export let description =
         </div>
     </div>
 </div>`;
+

@@ -36,6 +36,7 @@ let obj = {
                             console.log('gav')
                         };
                         audioPlay();
+
                     },
                 },
                 {
@@ -83,7 +84,8 @@ function cross(id) {
     media1.remove();
 }
 
+
 import './script/keysUp.js';
 import './script/makeRadioHotSpots.js';
 import './script/toggleBar.js';
-import { namePic, authorPic, description } from './script/mediaDescription.js';
+import { namePic, authorPic, description, mediainfo2 } from './script/mediaDescription.js';
