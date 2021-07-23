@@ -176,10 +176,24 @@
 }
 
 @media (max-width:1000px) {
+    .map-toggle {
+        display: block;
+        border: 3px solid #ccc;
+        width: 28px;
+        height: 28px;
+        border-radius: 17px;
+        background-color: rgba(67, 66, 66, 0.7);
+    }
+    .map-toggle:hover {
+        background-color: rgba(54, 53, 53, 0.7);
+    }
+    .map-toggle-on {
+        display:none;
+    }
     .map {
-        left: 68%;
-        width: 225px;
-        height: 275px;
+        left: 55%;
+        /*width: 225px;*/
+        /*height: 275px;*/
     }
     #a-scene {
         top: 175px;
