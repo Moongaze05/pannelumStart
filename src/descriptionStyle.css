@@ -40,10 +40,12 @@
     left:16vw;
     cursor: pointer;
     transition: .5s all;
+    font-size: 25px;
+    transform: rotate(270deg);
 }
 .toggler-text-rotate {
     transition: .5s all;
-    transform: rotate(180deg);
+    transform: rotate(90deg);
 }
 .media-description-text-padding {
     transform: translateX(-16vw);
@@ -199,7 +201,7 @@
         left: 94%;
     }
     .media-description-text-left {
-        width:70vw;
+        width:72vw;
         padding-left:0;
     }
     .media-description-text-left-wrapper {
@@ -207,8 +209,9 @@
     }
     .media-description-text-toggler {
         position: absolute;
+        top:10px;
         left: 65vw;
-        font-size: 20px;
+        font-size: 25px;
     }
     .media-description-text-padding {
         transform: translateX(-65vw);

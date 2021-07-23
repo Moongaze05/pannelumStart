@@ -22,7 +22,7 @@ export let description =
                     <p>Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusamus adipisci aspernatur aut culpa deleniti dicta dignissimos dolore dolorem earum est excepturi ipsa laboriosam maiores maxime minus natus nobis nulla obcaecati officiis placeat quo rem, sapiente tenetur ullam vel voluptates. adipisicing elit. Consequuntur cum cupiditate enim esse laudantium minima praesentium quae quasi voluptas voluptatum?</p>
                 </div>
             </div>
-            <div class="media-description-text-toggler" id="toggler-text" onclick="toggleText('toggle-text')">&#8592;</div>
+            <div class="media-description-text-toggler" id="toggler-text" onclick="toggleText('toggle-text')">&#9650;</div>
     </div>
     <div class="media-description-wrapper">
         <div class="media-description-text">
