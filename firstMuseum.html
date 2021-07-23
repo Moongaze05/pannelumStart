@@ -20,6 +20,12 @@
             let media1 = document.getElementById(id);
             media1.remove();
         }
+        function toggleText(id) {
+            const mediaText = document.getElementById(id);
+            mediaText.classList.toggle('media-description-text-padding');
+            const mediaToggler = document.getElementById('toggler-text');
+            mediaToggler.classList.toggle('toggler-text-rotate');
+        }
     </script>
 
 </head>
