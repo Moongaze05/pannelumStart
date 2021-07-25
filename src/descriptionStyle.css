@@ -69,13 +69,22 @@
     display: flex;
     justify-content: center;
     margin-top: 2vh;
+    position:relative;
 }
 
 .media-img {
     max-width: 90vw;
     max-height: 80vh;
 }
+.media-info-additional-button {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border: 4px solid #fefefe;
+    border-radius: 15px;
+    background-color: #fefefe;
 
+}
 .media-button-cross {
     position: absolute;
     left: 97%;
