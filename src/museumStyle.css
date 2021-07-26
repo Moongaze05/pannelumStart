@@ -2,6 +2,10 @@
     margin: 0;
     padding: 0;
 }
+@font-face {
+    font-family: Gotham Pro;
+    src: url(../fonts/GothamPro.ttf);
+}
 html, body {
     height: 100%;
 }
@@ -13,7 +17,9 @@ html, body {
     padding-bottom: env(safe-area-inset-bottom);
     padding-top: env(safe-area-inset-top);
 }
-
+.pnlm-panorama-info {
+    background-color:rgba(171, 36, 33, 0.8);
+}
 #controls {
     position: absolute;
     bottom: 0;
@@ -95,18 +101,49 @@ html, body {
 .map {
     position: absolute;
     background-color: rgb(51, 45, 45);
-    top: 0;
+    top: 20px;
     left: 70%;
     width: 350px;
-    height: 400px;
+    height: 450px;
     z-index: 2;
-    opacity: 0.6;
-    background-image: url('/assets/firstMuseum/map1.png');
-    background-size: contain;
+    opacity: 0.4;
+    background-image: url(/assets/map1.webp);
+    background-size: 70% 85%;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: bottom;
+    transition: all 0.5s;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
 }
 
+.map:hover {
+    opacity: 0.9;
+}
+
+.map-description-text {
+    display:none;
+    color: white;
+    background-color: rgba(171, 36, 33, 0.8);
+    padding: 7px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    font-size: 15px;
+    font-style: Gotham Pro;
+}
+.map-description-text-pc {
+    position: absolute;
+    top:2%;
+    color: white;
+    background-color: rgba(171, 36, 33, 0.8);
+    padding: 7px;
+    box-sizing: border-box;
+    /*border-radius: 10px;*/
+    font-size: 15px;
+    font-style: Gotham Pro;
+    z-index: 1;
+}
 .point {
     position: relative;
 }
@@ -121,57 +158,58 @@ html, body {
     left: -9999px;
 }
 
-[type="radio"]:checked+label,
-[type="radio"]:not(:checked)+label {
+[type="radio"]:checked+label.point-label,
+[type="radio"]:not(:checked)+label.point-label {
     position: relative;
-    padding-left: 28px;
+    padding-left: 16px;
     cursor: pointer;
     line-height: 20px;
     color: black;
 }
 
-[type="radio"]:checked+label:before,
-[type="radio"]:not(:checked)+label:before {
+[type="radio"]:checked+label.point-label:before,
+[type="radio"]:not(:checked)+label.point-label:before {
     content: '';
     position: absolute;
     left: 0;
     top: 0;
-    width: 14px;
-    height: 14px;
-    border: 1px solid black;
+    width: 9px;
+    height: 9px;
+    border: 4px solid black;
     border-radius: 100%;
     background: white;
 }
 
-[type="radio"]:not(:checked):hover+label:before {
-    border: 1px solid red;
+[type="radio"]:not(:checked):hover+label.point-label:before {
+    border: 4px solid #AB2421;
 }
 
-[type="radio"]:not(:checked):hover+label {
-    color: red;
+[type="radio"]:checked+label.point-label:before {
+    border: 5px solid #AB2421;
+    width: 7px;
+    height: 7px;
 }
+/*[type="radio"]:checked+label:after,*/
+/*[type="radio"]:not(:checked)+label:after {*/
+/*    content: '';*/
+/*    width: 8px;*/
+/*    height: 8px;*/
+/*    background: red;*/
+/*    position: absolute;*/
+/*    top: 4px;*/
+/*    left: 4px;*/
+/*    border-radius: 100%;*/
+/*    -webkit-transition: all 0.2s ease;*/
+/*    transition: all 0.2s ease;*/
+/*}*/
 
-[type="radio"]:checked+label:after,
-[type="radio"]:not(:checked)+label:after {
-    content: '';
-    width: 8px;
-    height: 8px;
-    background: red;
-    position: absolute;
-    top: 4px;
-    left: 4px;
-    border-radius: 100%;
-    -webkit-transition: all 0.2s ease;
-    transition: all 0.2s ease;
-}
-
-[type="radio"]:not(:checked)+label:after {
+[type="radio"]:not(:checked)+label.point-label:after {
     opacity: 0;
     -webkit-transform: scale(0);
     transform: scale(0);
 }
 
-[type="radio"]:checked+label:after {
+[type="radio"]:checked+label.point-label:after {
     opacity: 1;
     -webkit-transform: scale(1);
     transform: scale(1);
@@ -212,6 +250,9 @@ html, body {
 }
 
 @media (max-width: 425px) {
+    .map-description-text {
+        display:block;
+    }
     .visible {
         max-height: 0;
         padding: 0;
@@ -236,31 +277,34 @@ html, body {
     }
 
     .map {
-        display: none;
-        /* width: 100%; */
-        /* height: 100%; */
+        display:none;
+        width: 100%;
+        height: 100%;
+        opacity: 0.9;
         left: 0;
-        /* background-size: 350px 800px; */
-        background-position: 65px 0px;
+        top: 0;
+        background-size: 90% 80%;
+        background-position: bottom;
+        box-sizing: border-box;
     }
     .map-toggle-on {
         display:block;
     }
 
-    [type="radio"]:checked+label:before,
-    [type="radio"]:not(:checked)+label:before {
-        width: 10px;
-        height: 10px;
-    }
-    [type="radio"]:checked+label:after,
-    [type="radio"]:not(:checked)+label:after {
-        width: 8px;
-        height: 8px;
-        top: 2px;
-        left: 2px;
-    }
-    [type="radio"]:checked+label,
-    [type="radio"]:not(:checked)+label {
-        padding-left: 14px;
-    }
+    /*[type="radio"]:checked+label:before,*/
+    /*[type="radio"]:not(:checked)+label:before {*/
+    /*    width: 8px;*/
+    /*    height: 8px;*/
+    /*}*/
+    /*[type="radio"]:checked+label:after,*/
+    /*[type="radio"]:not(:checked)+label:after {*/
+    /*    width: 8px;*/
+    /*    height: 8px;*/
+    /*    top: 2px;*/
+    /*    left: 2px;*/
+    /*}*/
+    /*[type="radio"]:checked+label,*/
+    /*[type="radio"]:not(:checked)+label {*/
+    /*    padding-left: 14px;*/
+    /*}*/
 }
