@@ -18,11 +18,11 @@ html, body {
     padding-top: env(safe-area-inset-top);
 }
 .pnlm-panorama-info {
-    padding: 5px;
+    padding: 5px 10px 5px 5px;
     background-color:rgba(117, 117, 117, 0.6);
-    box-shadow: inset 0px 0px 1px rgba(255, 255, 255, 0.8), inset 0px 40px 40px rgba(255, 255, 255, 0.24), inset 0px -3px 6px rgba(255, 255, 255, 0.24), inset 0px -6px 18px rgba(255, 255, 255, 0.24), inset 0px -40px 40px rgba(47, 47, 59, 0.1), inset 0px 6px 12px rgba(255, 255, 255, 0.4);
-    backdrop-filter: blur(40px);
+    box-shadow: inset 0px 0px 1px rgba(255, 255, 255, 0.6), inset 0px 20px 20px rgba(255, 255, 255, 0.12), inset 0px -1.5px 3px rgba(255, 255, 255, 0.12), inset 0px -1.5px 4.5px rgba(255, 255, 255, 0.12), inset 0px -20px 20px rgba(47, 47, 59, 0.05), inset 0px 3px 6px rgba(255, 255, 255, 0.2);    backdrop-filter: blur(40px);
     /* Note: backdrop-filter has minimal browser support */
+    backdrop-filter: blur(10px);
     border-radius: 0px 12px 12px 0px;
     font-family: Gotham Pro;
 
@@ -115,7 +115,9 @@ html, body {
 .map-toggle:hover {
     background-color: rgba(154, 33, 30, 0.8);
 }
-
+.map-toggle-off {
+    display:none;
+}
 .map {
     position: absolute;
     background-color: rgb(51, 45, 45);
@@ -135,9 +137,13 @@ html, body {
     flex-direction: column;
     box-sizing: border-box;
 }
+
 .map-toggle-on {
     display:none;
 }
+/*.map-after-scenechange {*/
+/*    display:none;*/
+/*}*/
 .map:hover {
     opacity: 0.9;
 }
@@ -156,17 +162,21 @@ html, body {
     position: absolute;
     top:2%;
     color: white;
-    background-color: rgba(171, 36, 33, 0.8);
+    background-color: rgba(171, 36, 33, 0.6);
     padding: 7px;
     box-sizing: border-box;
     /*border-radius: 10px;*/
     font-size: 15px;
     font-family: Gotham Pro;
     z-index: 2;
-    box-shadow: inset 0px 0px 1px rgba(255, 255, 255, 0.8), inset 0px 40px 40px rgba(255, 255, 255, 0.24), inset 0px -3px 6px rgba(255, 255, 255, 0.24), inset 0px -40px 40px 0px rgba(47, 47, 59, 0.1);
-    backdrop-filter: blur(40px);
+    box-shadow: inset 0px 0px 1px rgba(255, 255, 255, 0.3),
+    inset 0px 20px 100px -20px rgba(255, 255, 255, 0.12),
+    inset 0px -1.5px 3px rgba(255, 255, 255, 0.12),
+    inset 0px -3px 9px rgba(255, 255, 255, 0.24),
+    inset 0px -20px 20px rgba(47, 47, 59, 0.5),
+    inset 0px 3px 6px rgba(255, 255, 255, 0.2);
     /* Note: backdrop-filter has minimal browser support */
-
+    backdrop-filter: blur(20px);
     border-radius: 0px 12px 12px 0px;
 }
 .point {
@@ -253,7 +263,7 @@ html, body {
     /*background-color: rgba(154, 33, 30, 0.8);*/
     /*}*/
     .map-toggle-on {
-        display:none;
+        display:block;
     }
     .map {
         left: 55%;
@@ -277,7 +287,7 @@ html, body {
 @media (max-width: 425px) {
     .map-description-text {
         display:block;
-        font-size: 10px;
+        font-size: 9px;
         width:300px;
     }
     .map-description-text-pc {
@@ -318,10 +328,20 @@ html, body {
         background-position: bottom;
         box-sizing: border-box;
     }
+
+
     .map-toggle-on {
         display:block;
     }
 
+    .map-toggle-off {
+        display:none;
+    }
+
+
+    .map-after-scenechange {
+        display:none;
+    }
     /*[type="radio"]:checked+label:before,*/
     /*[type="radio"]:not(:checked)+label:before {*/
     /*    width: 8px;*/

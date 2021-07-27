@@ -72,7 +72,31 @@ export let viewer = pannellum.viewer('panorama', obj);
 viewer.on('scenechange', function(ev) {
     let hotSpot = document.getElementById(ev);
     hotSpot.firstElementChild.checked = true;
+    ev = ev.replace('scene','spot');
+    let hallSpot = document.getElementById(ev);
+    hallSpot.checked = true;
+    ev = ev.replace('spot','scene');
+    let map = document.querySelector('.map');
+    if (!map.classList.contains('map-after-scenechange')) {
+        map.classList.add('map-after-scenechange');
+        map.classList.remove('map-after-scenechange');
+    }
+    if (map.classList.contains(('map-toggle-on'))) {
+        map.classList.toggle('map-toggle-off');
+    }
 });
+
+viewer.on('load', function() {
+    let map = document.querySelector('.map');
+        map.classList.remove('map-toggle-off');
+        map.classList.remove('map-toggle-on');
+    // if (!map.classList.contains('map-after-scenechange')) {
+    //     map.classList.add('map-after-scenechange');
+    // }
+    // if (map.classList.contains('map-after-scenechange')) {
+    //     map.classList.remove('map-after-scenechange');
+    // }
+})
 
 /**
  * Функция закрытия описания хотспота
@@ -89,3 +113,4 @@ import './script/keysUp.js';
 import './script/makeRadioHotSpots.js';
 import './script/toggleBar.js';
 import { namePic, authorPic, description } from './script/mediaDescription.js';
+import './script/hallRadio.js';

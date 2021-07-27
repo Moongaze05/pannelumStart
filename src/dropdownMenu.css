@@ -41,7 +41,14 @@
     position:relative;
     pointer-events:all;
 }
+/*.select:target .option {*/
+/*    position:absolute;*/
+/*}*/
 
+.open-halls {
+    position:relative;
+    pointer-events:all;
+}
 input.selectopt {
     opacity:0;
     position:absolute;
