@@ -131,13 +131,24 @@
                 <h2>Музей разведчика Н.И.Кузнецова</h2>
                 <h3>г. Талица</h3>
             </div>
-                <div class="select" tabindex="1">
+            <label for="open-list" class="label-open-list">
+                <input type="checkbox" name="open-list" id="open-list" style="position: absolute;
+    top: 9999999px;">
+                <div class="select" id="select-list" tabindex="1">
                     <input class="selectopt" name="test" type="radio" id="a-spot" checked>
                     <label for="a-spot" id="a-hall" class="option">Зал 1. Название зала</label>
 
                     <input class="selectopt" name="test" type="radio" id="b-spot">
                     <label for="b-spot" id="b-hall" class="option">Зал 2. Название зала</label>
+
+                    <input class="selectopt" name="test" type="radio" id="c-spot">
+                    <label for="c-spot" id="c-hall" class="option">Зал 3. Название зала</label>
+
+                    <input class="selectopt" name="test" type="radio" id="d-spot">
+                    <label for="d-spot" id="d-hall" class="option">Зал 4. Название зала</label>
+
                 </div>
+            </label>
             <div class="point" id="a-scene">
                 <input type="radio" name="radio-group" id="a-radio" checked>
                 <label class="point-label" for="a-radio"></label>

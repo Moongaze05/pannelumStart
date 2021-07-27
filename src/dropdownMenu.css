@@ -28,26 +28,44 @@
     white-space:nowrap;
     cursor: pointer;
     color:white;
-
-
-
+    visibility: hidden;
 }
+
+/*.option:nth-child(2) {*/
+/*    visibility: initial;*/
+/*}*/
 
 .option:hover {
     background: rgba(141, 21, 18, 0.8);
 }
-
-.select:focus .option {
-    position:relative;
-    pointer-events:all;
+.select .option {
+    /*pointer-events: none;*/
 }
+/*.select:focus .option {*/
+/*    position:relative;*/
+/*    pointer-events:all;*/
+/*}*/
 /*.select:target .option {*/
 /*    position:absolute;*/
 /*}*/
 
+.label-open-list {
+    z-index: 3;
+    overflow: fragments;
+}
+
 .open-halls {
     position:relative;
     pointer-events:all;
+    visibility: visible;
+}
+
+.open-halls .select .option {
+    pointer-events: all;
+}
+
+.open-halls option {
+    visibility: visible;
 }
 input.selectopt {
     opacity:0;
@@ -61,8 +79,8 @@ input.selectopt:checked + label.option {
     background:rgba(171, 36, 33, 0.8);
     border-top:none;
     position:relative;
-
-
+    visibility: visible;
+    pointer-events: none;
 }
 
 input.selectopt:checked + label.option:after {
@@ -78,6 +96,11 @@ input.selectopt:checked + label.option:after {
     pointer-events:none;
     z-index:3;
 
+}
+
+label.option:before {
+    pointer-events: none;
+    position: absolute;
 }
 
 input.selectopt:checked + label.option:before {

@@ -90,12 +90,6 @@ viewer.on('load', function() {
     let map = document.querySelector('.map');
         map.classList.remove('map-toggle-off');
         map.classList.remove('map-toggle-on');
-    // if (!map.classList.contains('map-after-scenechange')) {
-    //     map.classList.add('map-after-scenechange');
-    // }
-    // if (map.classList.contains('map-after-scenechange')) {
-    //     map.classList.remove('map-after-scenechange');
-    // }
 })
 
 /**

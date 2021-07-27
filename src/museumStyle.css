@@ -128,7 +128,7 @@ html, body {
     z-index: 2;
     opacity: 0.4;
     background-image: url(/assets/map1.webp);
-    background-size: 70% 85%;
+    background-size: 65% 85%;
     background-repeat: no-repeat;
     background-position: bottom;
     transition: all 0.5s;
