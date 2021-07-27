@@ -18,7 +18,14 @@ html, body {
     padding-top: env(safe-area-inset-top);
 }
 .pnlm-panorama-info {
-    background-color:rgba(171, 36, 33, 0.8);
+    padding: 5px;
+    background-color:rgba(117, 117, 117, 0.6);
+    box-shadow: inset 0px 0px 1px rgba(255, 255, 255, 0.8), inset 0px 40px 40px rgba(255, 255, 255, 0.24), inset 0px -3px 6px rgba(255, 255, 255, 0.24), inset 0px -6px 18px rgba(255, 255, 255, 0.24), inset 0px -40px 40px rgba(47, 47, 59, 0.1), inset 0px 6px 12px rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(40px);
+    /* Note: backdrop-filter has minimal browser support */
+    border-radius: 0px 12px 12px 0px;
+    font-family: Gotham Pro;
+
 }
 #controls {
     position: absolute;
@@ -77,7 +84,7 @@ html, body {
 
 .toggle-bar {
     border: none;
-    font-size: 20px;
+    padding: 8px;
     transition: all 0.5s;
 }
 
@@ -91,11 +98,22 @@ html, body {
 }
 
 .map-toggle {
-    display:none;
+    /*display:none;*/
     position: absolute;
-    top: 15px;
+    top: 20px;
     z-index: 3;
     right: 10px;
+    /*border: 3px solid rgba(171, 36, 33, 0.8);*/
+    border:none;
+    width: 40px;
+    height: 40px;
+    /*border-radius: 17px;*/
+    /*background-color: rgba(67, 66, 66, 0.7);*/
+    background-color: rgba(171, 36, 33, 0.8);
+}
+
+.map-toggle:hover {
+    background-color: rgba(154, 33, 30, 0.8);
 }
 
 .map {
@@ -117,7 +135,9 @@ html, body {
     flex-direction: column;
     box-sizing: border-box;
 }
-
+.map-toggle-on {
+    display:none;
+}
 .map:hover {
     opacity: 0.9;
 }
@@ -130,7 +150,7 @@ html, body {
     box-sizing: border-box;
     border-radius: 10px;
     font-size: 15px;
-    font-style: Gotham Pro;
+    font-family: Gotham Pro;
 }
 .map-description-text-pc {
     position: absolute;
@@ -141,8 +161,13 @@ html, body {
     box-sizing: border-box;
     /*border-radius: 10px;*/
     font-size: 15px;
-    font-style: Gotham Pro;
-    z-index: 1;
+    font-family: Gotham Pro;
+    z-index: 2;
+    box-shadow: inset 0px 0px 1px rgba(255, 255, 255, 0.8), inset 0px 40px 40px rgba(255, 255, 255, 0.24), inset 0px -3px 6px rgba(255, 255, 255, 0.24), inset 0px -40px 40px 0px rgba(47, 47, 59, 0.1);
+    backdrop-filter: blur(40px);
+    /* Note: backdrop-filter has minimal browser support */
+
+    border-radius: 0px 12px 12px 0px;
 }
 .point {
     position: relative;
@@ -218,15 +243,15 @@ html, body {
 @media (max-width:1000px) {
     .map-toggle {
         display: block;
-        border: 3px solid #ccc;
-        width: 28px;
-        height: 28px;
-        border-radius: 17px;
-        background-color: rgba(67, 66, 66, 0.7);
+        /*border: 3px solid #ccc;*/
+        /*width: 28px;*/
+        /*height: 28px;*/
+        /*border-radius: 17px;*/
+        /*background-color: rgba(67, 66, 66, 0.7);*/
     }
-    .map-toggle:hover {
-        background-color: rgba(54, 53, 53, 0.7);
-    }
+    /*.map-toggle:hover {*/
+    /*background-color: rgba(154, 33, 30, 0.8);*/
+    /*}*/
     .map-toggle-on {
         display:none;
     }
@@ -252,10 +277,15 @@ html, body {
 @media (max-width: 425px) {
     .map-description-text {
         display:block;
+        font-size: 10px;
+        width:300px;
+    }
+    .map-description-text-pc {
+        display: none;
     }
     .visible {
         max-height: 0;
-        padding: 0;
+        padding: 2px 10px;
         overflow: hidden;
     }
     .toggle-bar {
@@ -274,6 +304,7 @@ html, body {
     }
     .map-toggle {
         display:block;
+        top:18px;
     }
 
     .map {
