@@ -120,22 +120,33 @@ html, body {
 }
 .map {
     position: absolute;
-    background-color: rgb(51, 45, 45);
+    /*background-color: rgb(51, 45, 45);*/
     top: 20px;
     left: 70%;
-    width: 350px;
-    height: 450px;
+    width: 205px;
+    height: 470px;
     z-index: 2;
     opacity: 0.4;
     background-image: url(/assets/map1.webp);
-    background-size: 65% 85%;
+    background-size: 190px 370px;
     background-repeat: no-repeat;
-    background-position: bottom;
+    background-position: 50% 85%;
     transition: all 0.5s;
     padding: 12px;
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
+    background-color: rgba(117, 117, 117, 0.6);
+    box-shadow: inset 0px 1px 1px rgba(255, 255, 255, 0.4),
+    inset 0px 1px 4px rgba(255, 255, 255, 0.12),
+    inset 0px -3px 6px rgba(255, 255, 255, 0.12),
+    inset 0px -6px 18px rgba(255, 255, 255, 0.12),
+    inset 0px -22px 20px rgba(47, 47, 59, 0.1),
+    inset 0px 3px 6px rgba(255, 255, 255, 0.2);
+    /*filter: blur(4px);*/
+    backdrop-filter: blur(4px);
+    /* Note: backdrop-filter has minimal browser support */
+    border-radius: 4px;
 }
 
 .map-toggle-on {
@@ -263,7 +274,7 @@ html, body {
     /*background-color: rgba(154, 33, 30, 0.8);*/
     /*}*/
     .map-toggle-on {
-        display:block;
+        display:none;
     }
     .map {
         left: 55%;
