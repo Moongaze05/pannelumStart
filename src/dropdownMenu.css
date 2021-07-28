@@ -6,11 +6,10 @@
     display:flex;
     flex-direction: column;
     position:relative;
-    /*width:250px;*/
+    width:190px;
     height:40px;
     cursor: pointer;
     /*box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);*/
-    margin-top: 10px;
     font-size: 12px;
     font-family: Gotham Pro;
 }
@@ -56,8 +55,7 @@
 /*}*/
 
 .label-open-list {
-    z-index: 3;
-    overflow: fragments;
+    z-index: 2;
 }
 
 .open-halls {
@@ -116,4 +114,12 @@ input.selectopt:checked + label.option:before {
     width: 40px;
     content: '';
     background:rgba(171, 36, 33, 0.8);
+}
+
+@media (max-width: 425px) {
+    .select{
+        margin-top:10px;
+        width:300px;
+    }
+
 }
