@@ -76,10 +76,12 @@
 <body>
 
     <div id="panorama">
+        <a href="/" style="text-decoration: none">
         <div class="map-description-text-pc">
             <h2>Музей разведчика Н.И.Кузнецова</h2>
             <h3>г. Талица</h3>
         </div>
+        </a>
         <div id="controls">
             <div class="ctrl toggle-bar" id="toggle-bar">
                 <img src="./assets/Polygon.svg" alt="arrowdown">
@@ -128,10 +130,12 @@
                 <img src="./assets/map.svg" alt="map" height="15px">
             </button>
             <div class="map">
-                <div class="map-description-text">
-                    <h2>Музей разведчика Н.И.Кузнецова</h2>
-                    <h3>г. Талица</h3>
-                </div>
+                <a href="/" style="text-decoration: none">
+                    <div class="map-description-text">
+                        <h2>Музей разведчика Н.И.Кузнецова</h2>
+                        <h3>г. Талица</h3>
+                    </div>
+                </a>
                 <label for="open-list" class="label-open-list">
                     <input type="checkbox" name="open-list" id="open-list" style="position: absolute; top: 9999999px;">
                     <div class="select" id="select-list" tabindex="1">
@@ -149,7 +153,7 @@
 
                     </div>
                 </label>
-                <img src="./assets/map1.webp" alt="map" class="map-pic">
+                <img src="./assets/map1.webp" alt="map" class="map-pic" id="map-pic-id">
                 <div class="point" id="a-scene">
                     <input type="radio" name="radio-group" id="a-radio" checked>
                     <label class="point-label" for="a-radio"></label>
@@ -170,7 +174,7 @@
         function toggleMap () {
             map.classList.toggle('map-toggle-on');
         }
-        let mapPic = document.getElementById('map-pic');
+        let mapPic = document.getElementById('map-pic-id');
         mapPic.addEventListener("contextmenu", function(ev) {
             ev.preventDefault();
             makeRadio(ev);
